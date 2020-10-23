@@ -1,0 +1,64 @@
+MDScreen:
+     Image:
+          source: "images/back10.jpg"
+          pos_hint: {"center_x":0.2, "center_y":0.5}
+          elevation: 12
+
+     Image:
+          source: "images/logo1.png"
+          pos_hint: {"center_x":0.25, "center_y":0.53}
+          size_hint_x: "0.5"
+          size_hint_y: "0.8"
+          elevation: 12
+
+     Image:
+          source: "images/logo.png"
+          pos_hint: {"center_x":0.75, "center_y":0.8}
+          size_hint_x: "0.3"
+          size_hint_y: "0.3"
+          elevation: 12
+
+     MDLabel:
+          text: "Si vous avez oubliés votre mot de passe, contactez l'admin"
+          theme_text_color: "Custom"
+          text_color: 0.3, 0.3, 0.3, 1
+          font_name: 'fonts/PS.ttf'
+          font_size: '13sp'
+          bold: True
+          pos_hint: {"center_x":1.08, "center_y":0.22}
+
+     MDLabel:
+          text: "F-Society Copyright 2020"
+          theme_text_color: "Custom"
+          text_color: 0.3, 0.3, 0.3, 1
+          font_name: 'fonts/PS.ttf'
+          font_size: '12sp'
+          bold: False
+          pos_hint: {"center_x":1.18, "center_y":0.05}
+
+     MDTextField:
+          hint_text: 'Username'
+          pos_hint: {"center_x":0.76, "center_y":0.6}
+          size_hint: 0.35, 0.11
+          icon_right: "account"
+          icon_right_color: 0.8, 0.8, 0.8, 1
+          font_name: 'fonts/PS.ttf'
+
+     MDTextField:
+          hint_text: 'Password'
+          password: True
+          pos_hint: {"center_x":0.76, "center_y":0.45}
+          size_hint: 0.35, 0.11
+          icon_right: "lock"
+          icon_right_color: 0.8, 0.8, 0.8, 1
+          font_name: 'fonts/PS.ttf'
+
+     MDFillRoundFlatIconButton:
+          text: "S'identifier"
+          font_name: 'fonts/PS.ttf'
+          font_size: '16sp'
+          bold: True
+          pos_hint: {"center_x":0.76, "center_y":0.29}
+          size_hint: 0.2, 0.07
+          elevation: 11
+          icon: "arrow-right"
