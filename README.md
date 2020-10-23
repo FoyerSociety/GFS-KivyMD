@@ -1,6 +1,6 @@
 # GFS
 
-<img src="https://github.com/FoyerSociety/GFS/blob/images/cap.png">
+<img src="https://github.com/FoyerSociety/GFS/blob/master/images/cap.png">
 
 Desktop application using Python Kivy, Kivymd
 
