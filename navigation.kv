@@ -6,19 +6,11 @@ Screen:
                     orientation: 'vertical'
                     MDToolbar:
                         title: "GFS"
-                        elevation: 10
+                        elevation:0
                         left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
                     MDTabs:
-                        Tab:
-                            text: "Cuisine"
-                        Tab:
-                            text: "Ménage"
-                        Tab:
-                            text: "Coptisation"
-                        Tab:
-                            text: "Facture"
-                        Tab:
-                            text: "Trosa"
+                        id: tabs
+                        
                     Widget:
         MDNavigationDrawer:
             id: nav_drawer
