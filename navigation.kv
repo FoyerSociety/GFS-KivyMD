@@ -1,0 +1,25 @@
+Screen:
+    NavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "GFS"
+                        elevation: 10
+                        left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
+                    MDTabs:
+                        Tab:
+                            text: "Cuisine"
+                        Tab:
+                            text: "Ménage"
+                        Tab:
+                            text: "Coptisation"
+                        Tab:
+                            text: "Facture"
+                        Tab:
+                            text: "Trosa"
+                    Widget:
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
