@@ -26,22 +26,5 @@ class GFS(MDApp):
         self.theme_cls.primary_hue = "A700"
         return Builder.load_file('navigation.kv')
 
-    def on_start(self):
-        nom_icons = ('home', 'food', 'broom', 'cash', 'flash', 'backup-restore' )
-        nom_tabs = ('Générale', 'Cuisine', 'Ménage', 'Cotisation', 'Jirama', 'Trosa')
-        i = 0
-        while (i < 6):
-            self.root.ids.tabs.add_widget(
-                Tab(
-                    text = f"[size=20][font={fonts[-1]['fn_regular']}]{md_icons[nom_icons[i]]}[/size][/font] {nom_tabs[i]}"
-                )
-            )
-            i += 1
-        
-           
-        
-
-      
-
 
 GFS().run()                

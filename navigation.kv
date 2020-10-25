@@ -6,12 +6,60 @@ Screen:
                     orientation: 'vertical'
                     MDToolbar:
                         title: "GFS"
-                        elevation:0
-                        left_action_items: [['menu', lambda x: nav_drawer.toggle_nav_drawer()]]
-                    MDTabs:
-                        id: tabs
-                        
-                    Widget:
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+                        elevation:11
+
+                    MDBottomNavigation:
+                        panel_color: 1, 1, 1, 1
+                        elevation: 11
+                        MDBottomNavigationItem:
+                            name: 'screen 1'
+                            text: 'Générale'
+                            icon: 'home'
+                            MDLabel:
+                                text: 'Générale'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 2'
+                            text: 'Cuisine'
+                            icon: 'food'
+                            MDLabel:
+                                text: 'Cuisine'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 3'
+                            text: 'Ménage'
+                            icon: 'broom'
+                            MDLabel:
+                                text: 'Ménage'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 4'
+                            text: 'Cotisation'
+                            icon: 'currency-eur'
+                            MDLabel:
+                                text: 'Cotisation'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 5'
+                            text: 'Jirama'
+                            icon: 'flash'
+                            MDLabel:
+                                text: 'Jirama'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 6'
+                            text: 'Trosa'
+                            icon: 'backup-restore'
+                            MDLabel:
+                                text: 'Trosa'
+                                halign: 'center'
+
         MDNavigationDrawer:
             id: nav_drawer
             ContentNavigationDrawer:
