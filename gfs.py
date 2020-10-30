@@ -26,5 +26,4 @@ class GFS(MDApp):
         self.theme_cls.primary_hue = "A700"
         return Builder.load_file('navigation.kv')
 
-
 GFS().run()                

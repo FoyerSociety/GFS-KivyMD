@@ -7,15 +7,18 @@ Screen:
                     MDToolbar:
                         title: "GFS"
                         left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+                        right_action_items: [["bell", lambda x: app.callback_1()], ["dots-vertical", lambda x: app.callback_2()]]
                         elevation:11
 
                     MDBottomNavigation:
                         panel_color: 1, 1, 1, 1
                         elevation: 11
+                        text_color_active: 0,0,1,1
                         MDBottomNavigationItem:
                             name: 'screen 1'
                             text: 'Générale'
                             icon: 'home'
+                            icon_color: 1, 0, 1, 1
                             MDLabel:
                                 text: 'Générale'
                                 halign: 'center'
@@ -24,6 +27,7 @@ Screen:
                             name: 'screen 2'
                             text: 'Cuisine'
                             icon: 'food'
+                            color: 1, 0, 1, 1
                             MDLabel:
                                 text: 'Cuisine'
                                 halign: 'center'
