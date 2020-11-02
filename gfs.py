@@ -10,11 +10,8 @@ from kivy.uix.floatlayout import FloatLayout
 from kivymd.uix.tab import MDTabsBase
 from kivymd.icon_definitions import md_icons
 from kivymd.font_definitions import fonts
+from kivy.factory import Factory
 from kivy.lang import Builder
-
-
-class Tab(FloatLayout, MDTabsBase):
-    '''Class implementing content for a tab.'''
 
 class ContentNavigationDrawer(BoxLayout):
     pass
@@ -25,5 +22,8 @@ class GFS(MDApp):
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.primary_hue = "A700"
         return Builder.load_file('navigation.kv')
+    
+    
+
 
 GFS().run()                

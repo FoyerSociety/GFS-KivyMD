@@ -1,3 +1,5 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
 Screen:
     NavigationLayout:
         ScreenManager:
@@ -9,6 +11,25 @@ Screen:
                         left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
                         right_action_items: [["bell", lambda x: app.callback_1()], ["dots-vertical", lambda x: app.callback_2()]]
                         elevation:11
+
+                    MDBoxLayout:
+                        MDNavigationRail:
+                            id: rail
+                            md_bg_color: get_color_from_hex("#344954")
+                            color_normal: get_color_from_hex("#718089")
+                            color_active: get_color_from_hex("#f3ab44")
+
+                            MDNavigationRailItem:
+                                icon: "language-cpp"
+                                text: "C++"
+
+                            MDNavigationRailItem:
+                                icon: "language-python"
+                                text: "Python"
+
+                            MDNavigationRailItem:
+                                icon: "language-swift"
+                                text: "Swift"
 
                     MDBottomNavigation:
                         panel_color: 1, 1, 1, 1
