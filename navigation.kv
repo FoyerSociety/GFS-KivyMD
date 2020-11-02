@@ -8,83 +8,33 @@ Screen:
                     orientation: 'vertical'
                     MDToolbar:
                         title: "GFS"
-                        left_action_items: [['menu', lambda x: nav_drawer.set_state()]]
+                        left_action_items: [["menu", lambda x: app.rail_open()]]
                         right_action_items: [["bell", lambda x: app.callback_1()], ["dots-vertical", lambda x: app.callback_2()]]
-                        elevation:11
+                        elevation:8
 
                     MDBoxLayout:
                         MDNavigationRail:
                             id: rail
-                            md_bg_color: get_color_from_hex("#344954")
-                            color_normal: get_color_from_hex("#718089")
-                            color_active: get_color_from_hex("#f3ab44")
-
+                            md_bg_color: get_color_from_hex("##e6eced")
+                            color_normal: get_color_from_hex("#4f4f4f")
+                            color_active: get_color_from_hex("#d63904")
+                            visible: "Unlabeled"
+                            
+                        
                             MDNavigationRailItem:
-                                icon: "language-cpp"
-                                text: "C++"
-
+                                icon: "home"
+                                
                             MDNavigationRailItem:
-                                icon: "language-python"
-                                text: "Python"
-
+                                icon: "food"
+                               
                             MDNavigationRailItem:
-                                icon: "language-swift"
-                                text: "Swift"
-
-                    MDBottomNavigation:
-                        panel_color: 1, 1, 1, 1
-                        elevation: 11
-                        text_color_active: 0,0,1,1
-                        MDBottomNavigationItem:
-                            name: 'screen 1'
-                            text: 'Générale'
-                            icon: 'home'
-                            icon_color: 1, 0, 1, 1
-                            MDLabel:
-                                text: 'Générale'
-                                halign: 'center'
-
-                        MDBottomNavigationItem:
-                            name: 'screen 2'
-                            text: 'Cuisine'
-                            icon: 'food'
-                            color: 1, 0, 1, 1
-                            MDLabel:
-                                text: 'Cuisine'
-                                halign: 'center'
-
-                        MDBottomNavigationItem:
-                            name: 'screen 3'
-                            text: 'Ménage'
-                            icon: 'broom'
-                            MDLabel:
-                                text: 'Ménage'
-                                halign: 'center'
-
-                        MDBottomNavigationItem:
-                            name: 'screen 4'
-                            text: 'Cotisation'
-                            icon: 'currency-eur'
-                            MDLabel:
-                                text: 'Cotisation'
-                                halign: 'center'
-
-                        MDBottomNavigationItem:
-                            name: 'screen 5'
-                            text: 'Jirama'
-                            icon: 'flash'
-                            MDLabel:
-                                text: 'Jirama'
-                                halign: 'center'
-
-                        MDBottomNavigationItem:
-                            name: 'screen 6'
-                            text: 'Trosa'
-                            icon: 'backup-restore'
-                            MDLabel:
-                                text: 'Trosa'
-                                halign: 'center'
-
-        MDNavigationDrawer:
-            id: nav_drawer
-            ContentNavigationDrawer:
+                                icon: "broom"
+                            
+                            MDNavigationRailItem:
+                                icon: "currency-eur"
+                            
+                            MDNavigationRailItem:
+                                icon: "flash"
+                                
+                            MDNavigationRailItem:
+                                icon: "backup-restore"

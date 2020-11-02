@@ -1,7 +1,7 @@
 from kivy.config import Config 
 Config.set('graphics', 'resizable', False)
 Config.set('graphics', 'width', '950')
-Config.set('graphics', 'height', '580')
+Config.set('graphics', 'height', '600')
 
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import Screen
@@ -23,7 +23,11 @@ class GFS(MDApp):
         self.theme_cls.primary_hue = "A700"
         return Builder.load_file('navigation.kv')
     
+    def rail_open(self):
+        if self.root.ids.rail.state == "open":
+            self.root.ids.rail.state = "close"
+        else:
+            self.root.ids.rail.state = "open"
     
-
 
 GFS().run()                
