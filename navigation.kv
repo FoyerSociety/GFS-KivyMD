@@ -19,22 +19,69 @@ Screen:
                             color_normal: get_color_from_hex("#4f4f4f")
                             color_active: get_color_from_hex("#d63904")
                             visible: "Unlabeled"
+                            elevation:7
+                            use_hover_behavior: True
+                            hover_bg: 0, 0, 0, .2
                             
-                        
                             MDNavigationRailItem:
                                 icon: "home"
+                                on_release:
+                                    mng.current = "sc1"
                                 
                             MDNavigationRailItem:
                                 icon: "food"
+                                on_release:
+                                    mng.current = "sc2"
                                
                             MDNavigationRailItem:
                                 icon: "broom"
+                                on_release:
+                                    mng.current = "sc3"
                             
                             MDNavigationRailItem:
                                 icon: "currency-eur"
+                                on_release:
+                                    mng.current = "sc4"
                             
                             MDNavigationRailItem:
                                 icon: "flash"
+                                on_release:
+                                    mng.current = "sc5"
                                 
                             MDNavigationRailItem:
                                 icon: "backup-restore"
+                                on_release:
+                                    mng.current = "sc6"
+                
+                ScreenManager:
+                    id: mng
+                    Screen:
+                        name: "sc1"
+                        MDLabel:
+                            text: "Screen1"
+                            pos_hint: {"center_x":1.0, "center_y":0.5}
+                    Screen:
+                        name: "sc2"
+                        MDLabel:
+                            text: "Screen2"
+                            pos_hint: {"center_x":1.0, "center_y":0.5}
+                    Screen:
+                        name: "sc3"
+                        MDLabel:
+                            text: "Screen3"
+                            pos_hint: {"center_x":1.0, "center_y":0.5}
+                    Screen:
+                        name: "sc4"
+                        MDLabel:
+                            text: "Screen4"
+                            pos_hint: {"center_x":1.0, "center_y":0.5}
+                    Screen:
+                        name: "sc5"
+                        MDLabel:
+                            text: "Screen5"
+                            pos_hint: {"center_x":1.0, "center_y":0.5}
+                    Screen:
+                        name: "sc6"
+                        MDLabel:
+                            text: "Screen6"
+                            pos_hint: {"center_x":1.0, "center_y":0.5}

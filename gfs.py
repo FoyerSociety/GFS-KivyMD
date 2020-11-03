@@ -21,7 +21,7 @@ class GFS(MDApp):
         self.theme_cls.theme_style= "Light"
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.primary_hue = "A700"
-        return Builder.load_file('navigation.kv')
+        return Builder.load_file('login.kv')
     
     def rail_open(self):
         if self.root.ids.rail.state == "open":
@@ -29,5 +29,4 @@ class GFS(MDApp):
         else:
             self.root.ids.rail.state = "open"
     
-
 GFS().run()                
