@@ -1,58 +1,10 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 
+
 Screen:
     NavigationLayout:
         ScreenManager:
             Screen:
-                BoxLayout:
-                    orientation: 'vertical'
-                    MDToolbar:
-                        title: "GFS"
-                        left_action_items: [["menu", lambda x: app.rail_open()]]
-                        right_action_items: [["bell", lambda x: app.callback_1()], ["dots-vertical", lambda x: app.callback_2()]]
-                        elevation:8
-
-                    MDBoxLayout:
-                        MDNavigationRail:
-                            id: rail
-                            md_bg_color: get_color_from_hex("##e6eced")
-                            color_normal: get_color_from_hex("#4f4f4f")
-                            color_active: get_color_from_hex("#d63904")
-                            visible: "Unlabeled"
-                            elevation:7
-                            use_hover_behavior: True
-                            hover_bg: 0, 0, 0, .2
-                            
-                            MDNavigationRailItem:
-                                icon: "home"
-                                on_release:
-                                    mng.current = "sc1"
-                                
-                            MDNavigationRailItem:
-                                icon: "food"
-                                on_release:
-                                    mng.current = "sc2"
-                               
-                            MDNavigationRailItem:
-                                icon: "broom"
-                                on_release:
-                                    mng.current = "sc3"
-                            
-                            MDNavigationRailItem:
-                                icon: "currency-eur"
-                                on_release:
-                                    mng.current = "sc4"
-                            
-                            MDNavigationRailItem:
-                                icon: "flash"
-                                on_release:
-                                    mng.current = "sc5"
-                                
-                            MDNavigationRailItem:
-                                icon: "backup-restore"
-                                on_release:
-                                    mng.current = "sc6"
-                
                 ScreenManager:
                     id: mng
                     Screen:
@@ -85,3 +37,60 @@ Screen:
                         MDLabel:
                             text: "Screen6"
                             pos_hint: {"center_x":1.0, "center_y":0.5}
+                
+                
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: "GFS"
+                        left_action_items: [["menu", lambda x: app.rail_open()]]
+                        right_action_items: [["bell", lambda x: app.callback_1()], ["dots-vertical", lambda x: app.callback_2()]]
+                        elevation:8
+
+                    MDBoxLayout:
+                        MDNavigationRail:
+                            id: rail
+                            md_bg_color: get_color_from_hex("#020d12")
+                            color_normal: get_color_from_hex("#7e8782")
+                            color_active: get_color_from_hex("#ffffff")
+                            visible: "Unlabeled"
+                            elevation:10
+                            hover_bg: 0, 0, 0, .2
+                            
+                            MDNavigationRailItem:
+                                icon: "home"
+                                text: "Générale"
+                                on_release:
+                                    mng.current = "sc1"
+                            
+                            MDNavigationRailItem:
+                                icon: "food"
+                                text: "Cuisine"
+                                on_release:
+                                    mng.current = "sc2"
+                            
+                            MDNavigationRailItem:
+                                icon: "broom"
+                                text: "Ménage"
+                                on_release:
+                                    mng.current = "sc3"
+                            
+                            MDNavigationRailItem:
+                                icon: "currency-eur"
+                                text: "Cotisation"
+                                on_release:
+                                    mng.current = "sc4"
+                            
+                            MDNavigationRailItem:
+                                icon: "flash"
+                                text: "Jirama"
+                                on_release:
+                                    mng.current = "sc5"
+                            
+                            MDNavigationRailItem:
+                                icon: "backup-restore"
+                                text: "Trosa"
+                                on_release:
+                                    mng.current = "sc6"
+                
+                
