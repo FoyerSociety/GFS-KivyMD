@@ -43,8 +43,8 @@ Screen:
                     orientation: 'vertical'
                     MDToolbar:
                         title: "GFS"
-                        left_action_items: [["menu", lambda x: app.rail_open()]]
-                        right_action_items: [["bell", lambda x: app.callback_1()], ["dots-vertical", lambda x: app.callback_2()]]
+                        left_action_items: [["home", lambda x: app.callback_3()]]
+                        right_action_items: [["dots-vertical", lambda x: app.callback_2()]]
                         elevation:8
 
                     MDBoxLayout:
@@ -58,38 +58,38 @@ Screen:
                             hover_bg: 0, 0, 0, .2
                             
                             MDNavigationRailItem:
-                                icon: "home"
-                                text: "Générale"
-                                on_release:
-                                    mng.current = "sc1"
-                            
-                            MDNavigationRailItem:
                                 icon: "food"
                                 text: "Cuisine"
                                 on_release:
-                                    mng.current = "sc2"
+                                    mng.current = "sc1"
                             
                             MDNavigationRailItem:
                                 icon: "broom"
                                 text: "Ménage"
                                 on_release:
-                                    mng.current = "sc3"
+                                    mng.current = "sc2"
                             
                             MDNavigationRailItem:
                                 icon: "currency-eur"
                                 text: "Cotisation"
                                 on_release:
-                                    mng.current = "sc4"
+                                    mng.current = "sc3"
                             
                             MDNavigationRailItem:
                                 icon: "flash"
                                 text: "Jirama"
                                 on_release:
-                                    mng.current = "sc5"
+                                    mng.current = "sc4"
                             
                             MDNavigationRailItem:
                                 icon: "backup-restore"
                                 text: "Trosa"
+                                on_release:
+                                    mng.current = "sc5"
+                            
+                            MDNavigationRailItem:
+                                icon: "account-multiple"
+                                text: "Membres"
                                 on_release:
                                     mng.current = "sc6"
                 
