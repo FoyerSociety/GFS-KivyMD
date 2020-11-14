@@ -57,9 +57,6 @@ Screen:
                             text:"GFS"
                             user_font_size: "100sp"
                             pos_hint: {"center_y": .5}
-                            on_release: app.menu.open()
-                           
-
                         Widget:
 
                         MDFillRoundFlatIconButton:
@@ -67,7 +64,7 @@ Screen:
                             icon: "dots-vertical"
                             text:"Arleme"
                             pos_hint: {"center_y": .5}
-                            on_release: app.menu.open()
+                            on_release: app.menu()
 
                                 
                     MDBoxLayout:

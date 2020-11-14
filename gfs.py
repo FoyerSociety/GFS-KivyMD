@@ -52,7 +52,7 @@ class GFS(MDApp):
             {"icon": "logout", "text": "Déconnexion"}
         ]
         self.menu = MDDropdownMenu(
-            caller=self.INTERFACE.ids.managescreen.ids.mainscreen.ids.button_2,
+            caller=self.INTERFACE.ids.button_2,
             items=menu_items,
             width_mult=5,
             )
@@ -70,5 +70,4 @@ class GFS(MDApp):
     def on_start(self):
         pass
     
-
 GFS().run()      

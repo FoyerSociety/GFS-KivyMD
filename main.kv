@@ -1,0 +1,196 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+
+ManageScreen:
+    id:managescreen
+    transition : SlideTransition(duration=.50)
+    LoginScreen:
+        id : login
+        name: 'Login'
+
+        Screen:
+            Image:
+                source: "images/back10.jpg"
+                pos_hint: {"center_x":0.2, "center_y":0.5}
+                elevation: 12
+
+            Image:
+                source: "images/logo1.png"
+                pos_hint: {"center_x":0.25, "center_y":0.53}
+                size_hint_x: "0.5"
+                size_hint_y: "0.8"
+                elevation: 12
+
+            Image:
+                source: "images/logo.png"
+                pos_hint: {"center_x":0.75, "center_y":0.8}
+                size_hint_x: "0.3"
+                size_hint_y: "0.3"
+                elevation: 12
+
+            MDLabel:
+                text: "Si vous avez oubliés votre mot de passe, contactez l'admin"
+                theme_text_color: "Custom"
+                text_color: 0.3, 0.3, 0.3, 1
+                font_name: 'fonts/PS.ttf'
+                font_size: '13sp'
+                bold: True
+                pos_hint: {"center_x":1.08, "center_y":0.22}
+
+            MDLabel:
+                text: "F-Society Copyright 2020"
+                theme_text_color: "Custom"
+                text_color: 0.3, 0.3, 0.3, 1
+                font_name: 'fonts/PS.ttf'
+                font_size: '12sp'
+                bold: False
+                pos_hint: {"center_x":1.18, "center_y":0.05}
+
+            MDTextField:
+                hint_text: 'Username'
+                pos_hint: {"center_x":0.76, "center_y":0.6}
+                size_hint: 0.35, 0.11
+                icon_right: "account"
+                icon_right_color: 0.8, 0.8, 0.8, 1
+                font_name: 'fonts/PS.ttf'
+
+            MDTextField:
+                hint_text: 'Password'
+                password: True
+                pos_hint: {"center_x":0.76, "center_y":0.45}
+                size_hint: 0.35, 0.11
+                icon_right: "lock"
+                icon_right_color: 0.8, 0.8, 0.8, 1
+                font_name: 'fonts/PS.ttf'
+
+            MDFillRoundFlatIconButton:
+                on_release : app.root.current = 'Main'
+                text: "S'identifier"
+                font_name: 'fonts/PS.ttf'
+                font_size: '16sp'
+                bold: True
+                pos_hint: {"center_x":0.76, "center_y":0.29}
+                size_hint: 0.2, 0.07
+                elevation: 11
+                icon: "arrow-right"
+
+
+    MainScreen:
+        id : login
+        name: 'Main'
+        Screen:
+            NavigationLayout:
+                ScreenManager:
+                    Screen:
+                        ScreenManager:
+                            id: mng
+                            Screen:
+                                name: "sc1"
+                                MDLabel:
+                                    text: "Screen1"
+                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                            Screen:
+                                name: "sc2"
+                                MDLabel:
+                                    text: "Screen2"
+                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                            Screen:
+                                name: "sc3"
+                                MDLabel:
+                                    text: "Screen3"
+                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                            Screen:
+                                name: "sc4"
+                                MDLabel:
+                                    text: "Screen4"
+                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                            Screen:
+                                name: "sc5"
+                                MDLabel:
+                                    text: "Screen5"
+                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                            Screen:
+                                name: "sc6"
+                                MDLabel:
+                                    text: "Screen6"
+                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                        
+                        
+                        BoxLayout:
+                            orientation: 'vertical'
+                            
+                            CustomToolbar:
+                                id: toolbar
+                                md_bg_color : get_color_from_hex("#ff512b")
+                                size_hint_y: None
+                                height: self.theme_cls.standard_increment
+                                elevation: 10
+                                pos_hint: {"top": 1}
+                                specific_text_color: 1, 0, 1, 1
+
+
+                                MDFillRoundFlatIconButton:
+                                    id: button_1
+                                    icon: "home"
+                                    text:"GFS"
+                                    user_font_size: "100sp"
+                                    pos_hint: {"center_y": .5}
+                                    on_release: app.menu.open()
+                                   
+
+                                Widget:
+
+                                MDFillRoundFlatIconButton:
+                                    id: button_2
+                                    icon: "dots-vertical"
+                                    text:"Arleme"
+                                    pos_hint: {"center_y": .5}
+                                    on_release: app.menu.open()
+
+                                        
+                            MDBoxLayout:
+                                MDNavigationRail:
+                                    id: rail
+                                    md_bg_color: get_color_from_hex("#020d12")
+                                    color_normal: get_color_from_hex("#7e8782")
+                                    color_active: get_color_from_hex("#ffffff")
+                                    visible: "Unlabeled"
+                                    elevation:10
+                                    hover_bg: 0, 0, 0, .2
+                                    
+                                    MDNavigationRailItem:
+                                        icon: "food"
+                                        text: "Cuisine"
+                                        on_release:
+                                            mng.current = "sc1"
+                                    
+                                    MDNavigationRailItem:
+                                        icon: "broom"
+                                        text: "Ménage"
+                                        on_release:
+                                            mng.current = "sc2"
+                                    
+                                    MDNavigationRailItem:
+                                        icon: "currency-eur"
+                                        text: "Cotisation"
+                                        on_release:
+                                            mng.current = "sc3"
+                                    
+                                    MDNavigationRailItem:
+                                        icon: "flash"
+                                        text: "Jirama"
+                                        on_release:
+                                            mng.current = "sc4"
+                                    
+                                    MDNavigationRailItem:
+                                        icon: "backup-restore"
+                                        text: "Trosa"
+                                        on_release:
+                                            mng.current = "sc5"
+                                    
+                                    MDNavigationRailItem:
+                                        icon: "account-multiple"
+                                        text: "Membres"
+                                        on_release:
+                                            mng.current = "sc6"
