@@ -112,8 +112,6 @@ ManageScreen:
                                     elevation: 11
                                     icon: "sync"
                                     on_release : Tab_cuisine.current = 'Tour_cuisine'
-
-
                                 MDFillRoundFlatIconButton:
                                     text: "Menu répas"
                                     font_name: 'fonts/PS.ttf'
@@ -123,16 +121,40 @@ ManageScreen:
                                     elevation: 11
                                     icon: "food"
                                     on_release : Tab_cuisine.current = 'Menu_cuisine'
-
-
                                 ScreenManager:
                                     id : Tab_cuisine
                                     Screen:
                                         name:"Tour_cuisine"
-                                        MDLabel:
-                                            id : Tour_cuisine
-                                            text:"Tour de cuisine"
-                                            pos_hint: {"center_x":0.8, "center_y":0.2}
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "8dp"
+                                            size_hint: None, None
+                                            size: "280dp", "180dp"
+                                            pos_hint: {"center_x": 0.36, "center_y": 0.33}
+                                            MDLabel:
+                                                text: "Aujourd'hui"
+                                                theme_text_color: "Secondary"
+                                                size_hint_y: None
+                                                height: self.texture_size[1]
+                                            MDSeparator:
+                                                height: "1dp"
+                                            MDLabel:
+                                                text: "Body"
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "8dp"
+                                            size_hint: None, None
+                                            size: "280dp", "180dp"
+                                            pos_hint: {"center_x": 0.71, "center_y": 0.33}
+                                            MDLabel:
+                                                text: "Demain"
+                                                theme_text_color: "Secondary"
+                                                size_hint_y: None
+                                                height: self.texture_size[1]
+                                            MDSeparator:
+                                                height: "1dp"
+                                            MDLabel:
+                                                text: "Body"
                                     Screen:
                                         name:"Menu_cuisine"
                                         MDLabel:
