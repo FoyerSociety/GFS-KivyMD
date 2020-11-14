@@ -103,29 +103,84 @@ ManageScreen:
                                     bold: True
                             Screen:
                                 name: "sc2"
+                                Image:
+                                    source: "images/menage.jpg"
+                                    pos_hint: {"center_x":0.5, "center_y":0.75}
+                                    size_hint_x: "1"
+                                    size_hint_y: "0.8"
+                                    elevation: 12
                                 MDLabel:
-                                    text: "Screen2"
-                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                                    text: "MENAGE"
+                                    pos_hint: {"center_x":1.1, "center_y":0.74}
+                                    theme_text_color: "Custom"
+                                    text_color: get_color_from_hex("#ffffff")
+                                    font_name: 'fonts/PS.ttf'
+                                    font_style: 'H3'
+                                    bold: True
                             Screen:
                                 name: "sc3"
+                                Image:
+                                    source: "images/argent.jpg"
+                                    pos_hint: {"center_x":0.5, "center_y":0.75}
+                                    size_hint_x: "1"
+                                    size_hint_y: "0.8"
+                                    elevation: 12
                                 MDLabel:
-                                    text: "Screen3"
-                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                                    text: "ARGENT"
+                                    pos_hint: {"center_x":1.1, "center_y":0.74}
+                                    theme_text_color: "Custom"
+                                    text_color: get_color_from_hex("#ffffff")
+                                    font_name: 'fonts/PS.ttf'
+                                    font_style: 'H3'
+                                    bold: True
                             Screen:
                                 name: "sc4"
+                                Image:
+                                    source: "images/jirama.jpg"
+                                    pos_hint: {"center_x":0.5, "center_y":0.75}
+                                    size_hint_x: "1"
+                                    size_hint_y: "0.8"
+                                    elevation: 12
                                 MDLabel:
-                                    text: "Screen4"
-                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                                    text: "JIRAMA"
+                                    pos_hint: {"center_x":1.1, "center_y":0.74}
+                                    theme_text_color: "Custom"
+                                    text_color: get_color_from_hex("#ffffff")
+                                    font_name: 'fonts/PS.ttf'
+                                    font_style: 'H3'
+                                    bold: True
                             Screen:
                                 name: "sc5"
+                                Image:
+                                    source: "images/trosa.jpg"
+                                    pos_hint: {"center_x":0.5, "center_y":0.75}
+                                    size_hint_x: "1"
+                                    size_hint_y: "0.8"
+                                    elevation: 12
                                 MDLabel:
-                                    text: "Screen5"
-                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                                    text: "TROSA"
+                                    pos_hint: {"center_x":1.1, "center_y":0.74}
+                                    theme_text_color: "Custom"
+                                    text_color: get_color_from_hex("#ffffff")
+                                    font_name: 'fonts/PS.ttf'
+                                    font_style: 'H3'
+                                    bold: True
                             Screen:
                                 name: "sc6"
+                                Image:
+                                    source: "images/membre.jpg"
+                                    pos_hint: {"center_x":0.5, "center_y":0.75}
+                                    size_hint_x: "1"
+                                    size_hint_y: "0.8"
+                                    elevation: 12
                                 MDLabel:
-                                    text: "Screen6"
-                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                                    text: "MEMBRES"
+                                    pos_hint: {"center_x":1.1, "center_y":0.74}
+                                    theme_text_color: "Custom"
+                                    text_color: get_color_from_hex("#ffffff")
+                                    font_name: 'fonts/PS.ttf'
+                                    font_style: 'H3'
+                                    bold: True
                         
                         
                         BoxLayout:
@@ -133,12 +188,11 @@ ManageScreen:
                             
                             CustomToolbar:
                                 id: toolbar
-                                md_bg_color : get_color_from_hex("#ff512b")
+                                md_bg_color : get_color_from_hex("#FF5722")
                                 size_hint_y: None
                                 height: self.theme_cls.standard_increment
                                 elevation: 10
                                 pos_hint: {"top": 1}
-                                specific_text_color: 1, 0, 1, 1
 
 
                                 MDFillRoundFlatIconButton:
