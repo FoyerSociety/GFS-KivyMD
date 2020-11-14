@@ -1,5 +1,7 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 #:import SlideTransition kivy.uix.screenmanager.SlideTransition
+#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+
 
 
 ManageScreen:
@@ -109,6 +111,9 @@ ManageScreen:
                                     size_hint: 0.18, 0.07
                                     elevation: 11
                                     icon: "sync"
+                                    on_release : Tab_cuisine.current = 'Tour_cuisine'
+
+
                                 MDFillRoundFlatIconButton:
                                     text: "Menu répas"
                                     font_name: 'fonts/PS.ttf'
@@ -117,6 +122,23 @@ ManageScreen:
                                     size_hint: 0.18, 0.07
                                     elevation: 11
                                     icon: "food"
+                                    on_release : Tab_cuisine.current = 'Menu_cuisine'
+
+
+                                ScreenManager:
+                                    id : Tab_cuisine
+                                    Screen:
+                                        name:"Tour_cuisine"
+                                        MDLabel:
+                                            id : Tour_cuisine
+                                            text:"Tour de cuisine"
+                                            pos_hint: {"center_x":0.8, "center_y":0.2}
+                                    Screen:
+                                        name:"Menu_cuisine"
+                                        MDLabel:
+                                            id : Menu_cuisine
+                                            text:"Tour de cuisine"
+                                            pos_hint: {"center_x":0.8, "center_y":0.2}
                             Screen:
                                 name: "sc2"
                                 Image:
