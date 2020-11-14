@@ -19,16 +19,6 @@ from kivymd.icon_definitions import md_icons
 from kivymd.uix.behaviors import RectangularElevationBehavior
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.boxlayout import MDBoxLayout
-
-class LoginScreen(Screen):
-    pass
-
-class MainScreen(Screen):
-    pass
-
-class ManageScreen(ScreenManager):
-    pass
-        
         
 class CustomToolbar(
     ThemableBehavior, RectangularElevationBehavior, MDBoxLayout,

@@ -4,10 +4,10 @@
 
 
 
-ManageScreen:
+ScreenManager:
     id:managescreen
     transition : SlideTransition(duration=.50)
-    LoginScreen:
+    Screen:
         id : login
         name: 'Login'
 
@@ -78,7 +78,7 @@ ManageScreen:
                 icon: "arrow-right"
 
 
-    MainScreen:
+    Screen:
         id : login
         name: 'Main'
         Screen:
@@ -130,13 +130,11 @@ ManageScreen:
                                     Screen:
                                         name:"Tour_cuisine"
                                         MDLabel:
-                                            id : Tour_cuisine
                                             text:"Tour de cuisine"
                                             pos_hint: {"center_x":0.8, "center_y":0.2}
                                     Screen:
                                         name:"Menu_cuisine"
                                         MDLabel:
-                                            id : Menu_cuisine
                                             text:"Tour de cuisine"
                                             pos_hint: {"center_x":0.8, "center_y":0.2}
                             Screen:
@@ -163,6 +161,7 @@ ManageScreen:
                                     size_hint: 0.18, 0.07
                                     elevation: 11
                                     icon: "sync"
+                                    on_release : Tab_menage.current = 'Tour_menage'
                                 MDFillRoundFlatIconButton:
                                     text: "Autre ménage"
                                     font_name: 'fonts/PS.ttf'
@@ -171,6 +170,7 @@ ManageScreen:
                                     size_hint: 0.18, 0.07
                                     elevation: 11
                                     icon: "sync"
+                                    on_release : Tab_menage.current = 'Autre_menage'
                                 MDFillRoundFlatIconButton:
                                     text: "Grand ménage"
                                     font_name: 'fonts/PS.ttf'
@@ -179,6 +179,27 @@ ManageScreen:
                                     size_hint: 0.18, 0.07
                                     elevation: 11
                                     icon: "broom"
+                                    on_release : Tab_menage.current = 'Grand_menage'
+
+                                ScreenManager:
+                                    id : Tab_menage
+                                    Screen:
+                                        name:"Tour_menage"
+                                        MDLabel:
+                                            text:"Tour de menage"
+                                            pos_hint: {"center_x":0.9, "center_y":0.2}
+                                    Screen:
+                                        name:"Autre_menage"
+                                        MDLabel:
+                                            text:"Autre Menage"
+                                            pos_hint: {"center_x":0.9, "center_y":0.2}
+                                    Screen:
+                                        name:"Grand_menage"
+                                        MDLabel:
+                                            id : Grand_menage
+                                            text:"Grand Menage"
+                                            pos_hint: {"center_x":0.9, "center_y":0.2}
+
                             Screen:
                                 name: "sc3"
                                 Image:
