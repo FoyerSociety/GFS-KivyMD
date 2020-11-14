@@ -87,9 +87,20 @@ ManageScreen:
                             id: mng
                             Screen:
                                 name: "sc1"
+                                Image:
+                                    source: "images/cuisine.jpg"
+                                    pos_hint: {"center_x":0.5, "center_y":0.75}
+                                    size_hint_x: "1"
+                                    size_hint_y: "0.8"
+                                    elevation: 12
                                 MDLabel:
-                                    text: "Screen1"
-                                    pos_hint: {"center_x":1.0, "center_y":0.5}
+                                    text: "CUISINE"
+                                    pos_hint: {"center_x":1.1, "center_y":0.74}
+                                    theme_text_color: "Custom"
+                                    text_color: get_color_from_hex("#ffffff")
+                                    font_name: 'fonts/PS.ttf'
+                                    font_style: 'H3'
+                                    bold: True
                             Screen:
                                 name: "sc2"
                                 MDLabel:
