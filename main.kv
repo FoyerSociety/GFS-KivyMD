@@ -127,34 +127,66 @@ ManageScreen:
                                         name:"Tour_cuisine"
                                         MDCard:
                                             orientation: "vertical"
-                                            padding: "8dp"
+                                            padding: "15dp"
                                             size_hint: None, None
                                             size: "280dp", "180dp"
                                             pos_hint: {"center_x": 0.36, "center_y": 0.33}
                                             MDLabel:
                                                 text: "Aujourd'hui"
-                                                theme_text_color: "Secondary"
+                                                font_name: 'fonts/PS.ttf'
+                                                font_style: 'Subtitle2'
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#FF5722")
                                                 size_hint_y: None
                                                 height: self.texture_size[1]
                                             MDSeparator:
-                                                height: "1dp"
+                                                height: "2dp"
+                                            Image:
+                                                source: "images/food2.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "0.8"
+                                                elevation: 12   
                                             MDLabel:
-                                                text: "Body"
+                                                text: "Sarino"
+                                                pos_hint: {"x":0.35, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '30sp'
+                                            MDLabel:
+                                                text: "14-11-20"
+                                                pos_hint: {"x":0.4, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
                                         MDCard:
                                             orientation: "vertical"
-                                            padding: "8dp"
+                                            padding: "15dp"
                                             size_hint: None, None
                                             size: "280dp", "180dp"
                                             pos_hint: {"center_x": 0.71, "center_y": 0.33}
                                             MDLabel:
                                                 text: "Demain"
-                                                theme_text_color: "Secondary"
+                                                font_name: 'fonts/PS.ttf'
+                                                font_style: 'Subtitle2'
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#FF5722")
                                                 size_hint_y: None
                                                 height: self.texture_size[1]
                                             MDSeparator:
-                                                height: "1dp"
+                                                height: "2dp"
+                                            Image:
+                                                source: "images/food2.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "0.8"
+                                                elevation: 12   
                                             MDLabel:
-                                                text: "Body"
+                                                text: "Aina"
+                                                pos_hint: {"x":0.4, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '30sp'
+                                            MDLabel:
+                                                text: "15-11-20"
+                                                pos_hint: {"x":0.4, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
                                     Screen:
                                         name:"Menu_cuisine"
                                         MDLabel:
