@@ -1,6 +1,5 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 
-
 Screen:
     NavigationLayout:
         ScreenManager:
@@ -41,12 +40,36 @@ Screen:
                 
                 BoxLayout:
                     orientation: 'vertical'
-                    MDToolbar:
-                        title: "GFS"
-                        left_action_items: [["home", lambda x: app.callback_3()]]
-                        right_action_items: [["dots-vertical", lambda x: app.callback_2()]]
-                        elevation:8
+                    
+                    CustomToolbar:
+                        id: toolbar
+                        md_bg_color : get_color_from_hex("#ff512b")
+                        size_hint_y: None
+                        height: self.theme_cls.standard_increment
+                        elevation: 10
+                        pos_hint: {"top": 1}
+                        specific_text_color: 1, 0, 1, 1
 
+
+                        MDFillRoundFlatIconButton:
+                            id: button_1
+                            icon: "home"
+                            text:"GFS"
+                            user_font_size: "100sp"
+                            pos_hint: {"center_y": .5}
+                            on_release: app.menu.open()
+                           
+
+                        Widget:
+
+                        MDFillRoundFlatIconButton:
+                            id: button_2
+                            icon: "dots-vertical"
+                            text:"Arleme"
+                            pos_hint: {"center_y": .5}
+                            on_release: app.menu.open()
+
+                                
                     MDBoxLayout:
                         MDNavigationRail:
                             id: rail
@@ -92,5 +115,3 @@ Screen:
                                 text: "Membres"
                                 on_release:
                                     mng.current = "sc6"
-                
-                
