@@ -4,7 +4,6 @@ Config.set('graphics', 'width', '978')
 Config.set('graphics', 'height', '628')
 
 ########################################################
-from kivymd.app import MDApp
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
@@ -13,12 +12,14 @@ from kivy.factory import Factory
 from kivy.lang import Builder
 
 ########################################################
+from kivymd.app import MDApp
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.tab import MDTabsBase
 from kivymd.icon_definitions import md_icons
 from kivymd.uix.behaviors import RectangularElevationBehavior
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.swiper import MDSwiper, MDSwiperItem
         
 class CustomToolbar(
     ThemableBehavior, RectangularElevationBehavior, MDBoxLayout,
