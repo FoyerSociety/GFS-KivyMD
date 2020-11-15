@@ -261,7 +261,7 @@ ScreenManager:
                                                         elevation: 12   
                                                     MDLabel:
                                                         text: "Landry"
-                                                        pos_hint: {"x":0.18, "y":0.75}
+                                                        pos_hint: {"x":0.32, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '30sp'
                                                     MDLabel:
@@ -323,7 +323,7 @@ ScreenManager:
                                                         elevation: 12   
                                                     MDLabel:
                                                         text: "Arleme"
-                                                        pos_hint: {"x":0.39, "y":0.75}
+                                                        pos_hint: {"x":0.32, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '30sp'
                                                     MDLabel:
@@ -332,10 +332,18 @@ ScreenManager:
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:
                                         name:"Menu_cuisine"
-                                        MDLabel:
-                                            text : "Semaine A"
-                                            font_size: "14sp"
-                                            pos_hint: {"center_x":0.59, "center_y":0.53}                                   
+
+                                        AnchorLayout:
+                                            pos_hint: {"center_x":0.535, "center_y":0.34}
+                                            anchor_x: 'center'
+                                            id: tableau_repas
+
+                                        MDFillRoundFlatIconButton:
+                                            pos_hint : {"center_x":0.535, "center_y":0.08}
+                                            size_hint: 0.15, 0.06
+                                            text: "semaine A"
+                                            icon: "chevron-right"
+                                            font_size: "16sp"
                             Screen:
                                 name: "sc2"
                                 Image:

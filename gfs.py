@@ -15,12 +15,13 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.tab import MDTabsBase
-from kivymd.uix.datatables import MDDataTable
 from kivymd.icon_definitions import md_icons
 from kivymd.uix.behaviors import RectangularElevationBehavior
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.swiper import MDSwiper, MDSwiperItem
+from kivymd.uix.datatables import MDDataTable
+from kivy.metrics import dp
         
 class CustomToolbar(
     ThemableBehavior, RectangularElevationBehavior, MDBoxLayout,
@@ -36,6 +37,7 @@ class GFS(MDApp):
         self.theme_cls.theme_style= "Light"
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.primary_hue = "A700"
+        self.__tableau()
 
     def build(self):
         
@@ -61,5 +63,42 @@ class GFS(MDApp):
 
     def on_start(self):
         pass
+
+    
+    def __tableau(self):
+        tab = MDDataTable(
+            size_hint=(0.9, 0.3),
+            column_data=[
+                ("Lundi", dp(24)),
+                ("Mardi", dp(24)),
+                ("Mercredi", dp(24)),
+                ("Jeudi", dp(24)),
+                ("Vendredi", dp(24)),
+                ("Samedi", dp(24)),
+                ("Dimanche", dp(24)),
+            ],
+            row_data=[
+                (
+                    "Trondro frite",
+                    "Petsay",
+                    "Akoho Sauce",
+                    "Kitoza",
+                    "Chou Sauce",
+                    "Tsaramaso",
+                    "Legumes",
+                ),
+                (
+                    "4 500 Ar",
+                    "2 500 Ar",
+                    "5 000 Ar",
+                    "6 000 Ar",
+                    "2 000 Ar",
+                    "3 500 Ar",
+                    "3 000 Ar",
+                )
+            ],
+        )
+
+        self.INTERFACE.ids.tableau_repas.add_widget(tab)
     
 GFS().run()      
