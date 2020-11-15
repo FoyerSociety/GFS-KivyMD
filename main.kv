@@ -363,7 +363,7 @@ ScreenManager:
                                     text: "Tour de ménage"
                                     font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
-                                    pos_hint: {"center_x":0.29, "center_y":0.59}
+                                    pos_hint: {"center_x":0.21, "center_y":0.59}
                                     size_hint: 0.18, 0.06
                                     elevation: 11
                                     icon: "sync"
@@ -372,7 +372,7 @@ ScreenManager:
                                     text: "Autre ménage"
                                     font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
-                                    pos_hint: {"center_x":0.54, "center_y":0.59}
+                                    pos_hint: {"center_x":0.43, "center_y":0.59}
                                     size_hint: 0.18, 0.06
                                     elevation: 11
                                     icon: "sync"
@@ -381,11 +381,20 @@ ScreenManager:
                                     text: "Grand ménage"
                                     font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
-                                    pos_hint: {"center_x":0.79, "center_y":0.59}
-                                    size_hint: 0.18, 0.07
+                                    pos_hint: {"center_x":0.65, "center_y":0.59}
+                                    size_hint: 0.18, 0.06
                                     elevation: 11
                                     icon: "broom"
                                     on_release : Tab_menage.current = 'Grand_menage'
+                                MDFillRoundFlatIconButton:
+                                    text: "Ordures"
+                                    font_name: 'fonts/PS.ttf'
+                                    font_size: '16sp'
+                                    pos_hint: {"center_x":0.87, "center_y":0.59}
+                                    size_hint: 0.18, 0.06
+                                    elevation: 11
+                                    icon: "trash"
+                                    on_release : Tab_menage.current = 'ordure'
 
                                 ScreenManager:
                                     id : Tab_menage
@@ -401,6 +410,12 @@ ScreenManager:
                                             pos_hint: {"center_x":0.9, "center_y":0.2}
                                     Screen:
                                         name:"Grand_menage"
+                                        MDLabel:
+                                            id : Grand_menage
+                                            text:"Grand Menage"
+                                            pos_hint: {"center_x":0.9, "center_y":0.2}
+                                    Screen:
+                                        name:"ordure"
                                         MDLabel:
                                             id : Grand_menage
                                             text:"Grand Menage"
