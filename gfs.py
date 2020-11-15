@@ -15,6 +15,7 @@ from kivy.lang import Builder
 from kivymd.app import MDApp
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.tab import MDTabsBase
+from kivymd.uix.datatables import MDDataTable
 from kivymd.icon_definitions import md_icons
 from kivymd.uix.behaviors import RectangularElevationBehavior
 from kivymd.uix.menu import MDDropdownMenu
