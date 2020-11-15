@@ -125,103 +125,105 @@ ScreenManager:
                                     id : Tab_cuisine
                                     Screen:
                                         name:"Tour_cuisine"
-                                        MDSwiper:
-                                            MDSwiperItem:
-                                                MDCard:
-                                                    orientation: "vertical"
-                                                    padding: "15dp"
-                                                    size_hint: None, None
-                                                    size: "250dp", "220dp"
-                                                    pos_hint: {"center_x": 0.255, "center_y": 0.28}
-                                                    MDLabel:
-                                                        text: "Hier"
-                                                        font_name: 'fonts/PS.ttf'
-                                                        font_style: 'Subtitle2'
-                                                        theme_text_color: "Custom"
-                                                        text_color: get_color_from_hex("#FF5722")
-                                                        size_hint_y: None
-                                                        height: self.texture_size[1]
-                                                    MDSeparator:
-                                                        height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
-                                                    MDLabel:
-                                                        text: "Dinahasina"
-                                                        pos_hint: {"x":0.18, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
-                                                        font_size: '30sp'
-                                                    MDLabel:
-                                                        text: "14-11-20"
-                                                        pos_hint: {"x":0.38, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
-                                            MDSwiperItem:
-                                                MDCard:
-                                                    orientation: "vertical"
-                                                    padding: "15dp"
-                                                    size_hint: None, None
-                                                    size: "250dp", "220dp"
-                                                    pos_hint: {"center_x": 0.54, "center_y": 0.28}
-                                                    MDLabel:
-                                                        text: "Aujourd'hui"
-                                                        font_name: 'fonts/PS.ttf'
-                                                        font_style: 'Subtitle2'
-                                                        theme_text_color: "Custom"
-                                                        text_color: get_color_from_hex("#FF5722")
-                                                        size_hint_y: None
-                                                        height: self.texture_size[1]
-                                                    MDSeparator:
-                                                        height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
-                                                    MDLabel:
-                                                        text: "Sarino"
-                                                        pos_hint: {"x":0.32, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
-                                                        font_size: '30sp'
-                                                    MDLabel:
-                                                        text: "14-11-20"
-                                                        pos_hint: {"x":0.38, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
-                                            MDSwiperItem:
-                                                MDCard:
-                                                    orientation: "vertical"
-                                                    padding: "15dp"
-                                                    size_hint: None, None
-                                                    size: "250dp", "220dp"
-                                                    pos_hint: {"center_x": 0.82, "center_y": 0.28}
-                                                    MDLabel:
-                                                        text: "Demain"
-                                                        font_name: 'fonts/PS.ttf'
-                                                        font_style: 'Subtitle2'
-                                                        theme_text_color: "Custom"
-                                                        text_color: get_color_from_hex("#FF5722")
-                                                        size_hint_y: None
-                                                        height: self.texture_size[1]
-                                                    MDSeparator:
-                                                        height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
-                                                    MDLabel:
-                                                        text: "Aina"
-                                                        pos_hint: {"x":0.39, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
-                                                        font_size: '30sp'
-                                                    MDLabel:
-                                                        text: "15-11-20"
-                                                        pos_hint: {"x":0.38, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
+                                        MDIconButton:
+                                            icon: "chevron-left"
+                                            pos_hint: {"center_x": 0.1, "center_y": 0.28}
+                                        MDIconButton:
+                                            icon: "chevron-right"
+                                            pos_hint: {"center_x": 0.975, "center_y": 0.28}
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "250dp", "220dp"
+                                            pos_hint: {"center_x": 0.255, "center_y": 0.28}
+                                            MDLabel:
+                                                text: "Hier"
+                                                font_name: 'fonts/PS.ttf'
+                                                font_style: 'Subtitle2'
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#FF5722")
+                                                size_hint_y: None
+                                                height: self.texture_size[1]
+                                            MDSeparator:
+                                                height: "2dp"
+                                            Image:
+                                                source: "images/food2.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "0.8"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Dinahasina"
+                                                pos_hint: {"x":0.18, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '30sp'
+                                            MDLabel:
+                                                text: "14-11-20"
+                                                pos_hint: {"x":0.38, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "250dp", "220dp"
+                                            pos_hint: {"center_x": 0.54, "center_y": 0.28}
+                                            MDLabel:
+                                                text: "Aujourd'hui"
+                                                font_name: 'fonts/PS.ttf'
+                                                font_style: 'Subtitle2'
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#FF5722")
+                                                size_hint_y: None
+                                                height: self.texture_size[1]
+                                            MDSeparator:
+                                                height: "2dp"
+                                            Image:
+                                                source: "images/food2.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "0.8"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Sarino"
+                                                pos_hint: {"x":0.32, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '30sp'
+                                            MDLabel:
+                                                text: "14-11-20"
+                                                pos_hint: {"x":0.38, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "250dp", "220dp"
+                                            pos_hint: {"center_x": 0.82, "center_y": 0.28}
+                                            MDLabel:
+                                                text: "Demain"
+                                                font_name: 'fonts/PS.ttf'
+                                                font_style: 'Subtitle2'
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#FF5722")
+                                                size_hint_y: None
+                                                height: self.texture_size[1]
+                                            MDSeparator:
+                                                height: "2dp"
+                                            Image:
+                                                source: "images/food2.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "0.8"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Aina"
+                                                pos_hint: {"x":0.39, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '30sp'
+                                            MDLabel:
+                                                text: "15-11-20"
+                                                pos_hint: {"x":0.38, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
                                     Screen:
                                         name:"Menu_cuisine"
                                         MDLabel:
