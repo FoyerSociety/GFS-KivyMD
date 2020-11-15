@@ -1,0 +1,3 @@
+kivy==1.11.1
+https://github.com/kivymd/KivyMD/archive/master.zip
+Pillow
