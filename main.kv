@@ -103,8 +103,7 @@ ScreenManager:
                                     font_style: 'H3'
                                     bold: True
                                 MDFillRoundFlatIconButton:
-                                    text: "Tour de cusine"
-                                    font_name: 'fonts/PS.ttf'
+                                    text: "Tour de cuisine"
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.40, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -113,7 +112,6 @@ ScreenManager:
                                     on_release : Tab_cuisine.current = 'Tour_cuisine'
                                 MDFillRoundFlatIconButton:
                                     text: "Menu répas"
-                                    font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.68, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -366,7 +364,6 @@ ScreenManager:
                                     bold: True
                                 MDFillRoundFlatIconButton:
                                     text: "Tour de ménage"
-                                    font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.21, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -375,7 +372,6 @@ ScreenManager:
                                     on_release : Tab_menage.current = 'Tour_menage'
                                 MDFillRoundFlatIconButton:
                                     text: "Autre ménage"
-                                    font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.43, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -384,7 +380,6 @@ ScreenManager:
                                     on_release : Tab_menage.current = 'Autre_menage'
                                 MDFillRoundFlatIconButton:
                                     text: "Grand ménage"
-                                    font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.65, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -393,7 +388,6 @@ ScreenManager:
                                     on_release : Tab_menage.current = 'Grand_menage'
                                 MDFillRoundFlatIconButton:
                                     text: "Ordures"
-                                    font_name: 'fonts/PS.ttf'
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.87, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -507,7 +501,7 @@ ScreenManager:
                                                         elevation: 12   
                                                     MDLabel:
                                                         text: "Aina"
-                                                        pos_hint: {"x":0.39, "y":0.75}
+                                                        pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '30sp'
                                                     MDLabel:
@@ -823,10 +817,125 @@ ScreenManager:
                                             pos_hint: {"center_x":0.9, "center_y":0.2}
                                     Screen:
                                         name:"ordure"
-                                        MDLabel:
-                                            id : Grand_menage
-                                            text:"Grand Menage"
-                                            pos_hint: {"center_x":0.9, "center_y":0.2}
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "160dp", "220dp"
+                                            pos_hint: {"center_x": 0.18, "center_y": 0.28}
+                                            Image:
+                                                source: "images/trash.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "3.5"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Aina"
+                                                pos_hint: {"x":0.38, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDLabel:
+                                                text: "Landry"
+                                                pos_hint: {"x":0.32, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "160dp", "220dp"
+                                            pos_hint: {"center_x": 0.36, "center_y": 0.28}
+                                            Image:
+                                                source: "images/trash.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "3.5"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Zacké"
+                                                pos_hint: {"x":0.33, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDLabel:
+                                                text: "Arleme"
+                                                pos_hint: {"x":0.31, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "160dp", "265dp"
+                                            pos_hint: {"center_x": 0.54, "center_y": 0.28}
+                                            MDIconButton:
+                                                icon: "star"
+                                                theme_text_color: "Custom"
+                                            Image:
+                                                source: "images/trash.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "3.5"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Haja"
+                                                pos_hint: {"x":0.38, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDLabel:
+                                                text: "Sarino"
+                                                pos_hint: {"x":0.32, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDSwitch:
+                                                pos_hint: {'center_x': .47, 'center_y': .5}
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "160dp", "220dp"
+                                            pos_hint: {"center_x": 0.72, "center_y": 0.28}
+                                            MDIconButton:
+                                                icon: "star"
+                                                theme_text_color: "Custom"
+                                            Image:
+                                                source: "images/trash.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "3.5"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Gaetan"
+                                                pos_hint: {"x":0.29, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDLabel:
+                                                text: "Dinahasina"
+                                                pos_hint: {"x":0.20, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "160dp", "220dp"
+                                            pos_hint: {"center_x": 0.90, "center_y": 0.28}
+                                            Image:
+                                                source: "images/trash.png"
+                                                pos_hint: {"center_x":0.5, "center_y":0.75}
+                                                size_hint_x: "1"
+                                                size_hint_y: "3.5"
+                                                elevation: 12   
+                                            MDLabel:
+                                                text: "Fabien"
+                                                pos_hint: {"x":0.30, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDLabel:
+                                                text: "Casimir"
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                                pos_hint: {"x":0.30, "y":0.75}
+                                            
 
                             Screen:
                                 name: "sc3"
