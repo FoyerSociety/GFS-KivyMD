@@ -39,6 +39,15 @@ ScreenManager:
                 font_size: '13sp'
                 bold: True
                 pos_hint: {"center_x":1.08, "center_y":0.22}
+            
+            MDLabel:
+                text: "Le mot de passe est incorrect !"
+                theme_text_color: "Custom"
+                text_color: get_color_from_hex("#fc0345")
+                font_name: 'fonts/PS.ttf'
+                font_size: '16sp'
+                bold: True
+                pos_hint: {"center_x":1.14, "center_y":0.17}
 
             MDLabel:
                 text: "F-Society Copyright 2020"
@@ -892,7 +901,7 @@ ScreenManager:
                                             orientation: "vertical"
                                             padding: "15dp"
                                             size_hint: None, None
-                                            size: "160dp", "220dp"
+                                            size: "160dp", "265dp"
                                             pos_hint: {"center_x": 0.72, "center_y": 0.28}
                                             MDIconButton:
                                                 icon: "star"
