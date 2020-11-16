@@ -11,7 +11,7 @@
 `python -m pip install -r windows_requirements.txt`
 
 
-** Finally **
+**Finally**
 
 `python gfs.py`
 
@@ -27,8 +27,8 @@
  </tr>
  <tr>
   <td> Gaetan Jonathan :grin: </td>
-  <td> Landry Daniel :smiley: </td>
-  <td> Arlème Johnson :smiley: </td>
+  <td> Landry Daniel :no_mouth: </td>
+  <td> Arlème Johnson :sunglasses: </td>
  </tr>
 </table>
 

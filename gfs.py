@@ -86,7 +86,7 @@ class GFS(MDApp):
                     "Kitoza",
                     "Chou Sauce",
                     "Tsaramaso",
-                    "Legumes",
+                    "Légumes",
                 ),
                 (
                     "4 500 Ar",
