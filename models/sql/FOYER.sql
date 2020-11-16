@@ -104,7 +104,7 @@ CREATE TABLE `User` (
   `id` int(11) NOT NULL,
   `username` varchar(20) DEFAULT NULL,
   `prom` char(3) DEFAULT NULL,
-  `PASSWORD` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `priv` char(2) DEFAULT NULL,
   `ind_uni_mp` int(11) DEFAULT NULL,
   `ind_uni_ma` int(11) DEFAULT NULL,
