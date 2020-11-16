@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+import sys, time
+if '--prod' in sys.argv:
+    PROD = True
+    sys.argv.remove('--prod')
+else: PROD = None 
+
+from models.models import Database
+from models.config import CONFIG
+########################################################
 from kivy.config import Config 
 Config.set('graphics', 'resizable', False)
 Config.set('graphics', 'width', '978')
@@ -23,22 +32,29 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.swiper import MDSwiper, MDSwiperItem
 from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
-        
-class CustomToolbar(
-    ThemableBehavior, RectangularElevationBehavior, MDBoxLayout,
-):
+
+
+
+class CustomToolbar(ThemableBehavior, RectangularElevationBehavior, MDBoxLayout):
+
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
 
+
 class GFS(MDApp):
+
+
     def __init__(self):
         super().__init__()
+        self.db = None
         self.INTERFACE = Builder.load_file('main.kv')
         self.theme_cls.theme_style= "Light"
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.primary_hue = "A700"
         self.__tableau()
+
 
     def build(self):
         
@@ -51,20 +67,21 @@ class GFS(MDApp):
             items=menu_items,
             width_mult=5,
             )
-
         self.menu.bind(on_release=self.set_item)
 
         return self.INTERFACE
     
+
     def set_item(self, instance_menu, instance_menu_item):
         def set_item(interval):
             self.screen.ids.field.text = instance_menu_item.text
             instance_menu.dismiss()
         Clock.schedule_once(set_item, 0.5)    
 
-    def on_start(self):
-        pass
 
+    def on_start(self):
+        self.db = Database(CONFIG)
+    
     
     def __tableau(self):
         tab = MDDataTable(
@@ -102,4 +119,18 @@ class GFS(MDApp):
 
         self.INTERFACE.ids.tableau_repas.add_widget(tab)
     
+
+    def login(self):
+        self.INTERFACE.ids.button_login.text("...")
+        if not self.db: return 
+
+        username = self.INTERFACE.ids.username.text
+        password = self.INTERFACE.ids.password.text
+        if not PROD or self.db.login(username,password):
+            self.INTERFACE.current = "Main"
+            return
+        self.INTERFACE.ids.button_login.text("S'identifier")
+        self.INTERFACE.ids.errorLogin.text("Le mot de passe est incorrect !")
+
+
 GFS().run()      
