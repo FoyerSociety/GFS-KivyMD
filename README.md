@@ -15,6 +15,9 @@
 
 `python gfs.py`
 
+[In production mode ]
+`python gfs.py --prod` 
+
 ## Developers
 
 [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](#README)
