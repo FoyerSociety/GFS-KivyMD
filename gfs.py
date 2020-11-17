@@ -20,6 +20,7 @@ from kivy.uix.floatlayout import FloatLayout
 from kivymd.font_definitions import fonts
 from kivy.factory import Factory
 from kivy.lang import Builder
+from kivy.clock import Clock
 
 ########################################################
 from kivymd.app import MDApp
@@ -29,8 +30,8 @@ from kivymd.icon_definitions import md_icons
 from kivymd.uix.behaviors import RectangularElevationBehavior
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.swiper import MDSwiper, MDSwiperItem
 from kivymd.uix.datatables import MDDataTable
+from kivymd.uix.spinner import MDSpinner
 from kivy.metrics import dp
 
 
@@ -80,7 +81,8 @@ class GFS(MDApp):
 
 
     def on_start(self):
-        self.db = Database(CONFIG)
+        if PROD:
+            self.db = Database(CONFIG)
     
     
     def __tableau(self):
@@ -120,17 +122,26 @@ class GFS(MDApp):
         self.INTERFACE.ids.tableau_repas.add_widget(tab)
     
 
-    def login(self):
-        self.INTERFACE.ids.button_login.text("...")
-        if not self.db: return 
+    def loading(self):
+        self.INTERFACE.ids.button_login.text = " "
+        self.INTERFACE.ids.button_login.icon = " "
+        self.INTERFACE.ids.loader.active = True
 
+        Clock.schedule_once(self.login, 3)
+
+    def login(self, event):
+        if not self.db: return 
+        
         username = self.INTERFACE.ids.username.text
         password = self.INTERFACE.ids.password.text
         if not PROD or self.db.login(username,password):
             self.INTERFACE.current = "Main"
             return
-        self.INTERFACE.ids.button_login.text("S'identifier")
-        self.INTERFACE.ids.errorLogin.text("Le mot de passe est incorrect !")
-
+        # self.INTERFACE.ids.button_login.label_change("S'identifier")
+        self.INTERFACE.ids.loader.active = False
+        self.INTERFACE.ids.password.text = ""
+        self.INTERFACE.ids.button_login.icon = "arrow-right"
+        self.INTERFACE.ids.button_login.text = "S'identifier"
+        self.INTERFACE.ids.errorLogin.text = "Le mot de passe est incorrect !"
 
 GFS().run()      

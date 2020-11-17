@@ -80,7 +80,7 @@ ScreenManager:
 
             MDFillRoundFlatIconButton:
                 # on_release : app.root.current = 'Main'
-                on_release : app.login()
+                on_release : app.loading()
                 text: "S'identifier"
                 font_size: '16sp'
                 bold: True  
@@ -90,7 +90,14 @@ ScreenManager:
                 icon: "arrow-right"
                 id: button_login
 
-
+            MDSpinner:
+                id : loader
+                size_hint: None, None
+                size: dp(20), dp(20)
+                pos_hint: {'center_x':0.75, 'center_y':0.29}
+                active: False
+                theme_color: "Custom"
+                color: get_color_from_hex("#ffffff")
     Screen:
         id : Main
         name: 'Main'
