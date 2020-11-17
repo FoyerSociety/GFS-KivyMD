@@ -15,6 +15,13 @@ class Database:
 
         return True \
             if len(self.cursor.fetchall()) > 0 else False
-        
-    
 
+        
+    def sendPassword(self):
+
+        request = '''
+            SELECT password FROM User
+        '''
+        self.cursor.execute(request,id)
+
+        return self.cursor.fetchall()
