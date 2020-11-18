@@ -1,4 +1,5 @@
 import mysql.connector
+import hashlib
 
 
 class Database:
@@ -11,6 +12,7 @@ class Database:
         request = '''
             SELECT 1 FROM User WHERE username = %s AND password = %s 
         '''
+        password = hashlib.sha3_256(password.encode("utf-8")).hexdigest()
         self.cursor.execute(request,(username,password))
 
         return True \
