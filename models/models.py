@@ -1,11 +1,9 @@
 import mysql.connector
-from config import CONFIG 
-
 
 
 class Database:
-    def __init__(self):
-        self.connex = mysql.connector.connect(CONFIG)
+    def __init__(self, config):
+        self.connex = mysql.connector.connect(**config)
         self.cursor = self.connex.cursor()
 
 
@@ -15,7 +13,15 @@ class Database:
         '''
         self.cursor.execute(request,(username,password))
 
-        return len(self.cursor.fetchall())
-        
-    
+        return True \
+            if len(self.cursor.fetchall()) > 0 else False
 
+        
+    def sendPassword(self):
+
+        request = '''
+            SELECT password FROM User
+        '''
+        self.cursor.execute(request,id)
+
+        return self.cursor.fetchall()

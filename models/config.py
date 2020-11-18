@@ -1,6 +1,6 @@
 CONFIG = {
-    "user" : "",
-    "password" : "",
-    "host" : "",
-    "database" : "",
+    "user" : "foyer",
+    "password" : "__foyer__",
+    "host" : "gaetanbot.xyz",
+    "database" : "FOYER",
 }
