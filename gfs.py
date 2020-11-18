@@ -125,16 +125,19 @@ class GFS(MDApp):
         self.INTERFACE.ids.tableau_repas.add_widget(tab)
     
 
-    def loading(self):
+    def loadConnection(self):
+        if not self.db and PROD: 
+            self.INTERFACE.ids.errorLogin.text = "Vérifier votre connexion Internet"
+            return
+
         self.INTERFACE.ids.button_login.text = " "
         self.INTERFACE.ids.button_login.icon = " "
         self.INTERFACE.ids.loader.color = (1,1,1,1)
         self.INTERFACE.ids.loader.active = True
 
-        Clock.schedule_once(self.login, 3)
+        Clock.schedule_once(self.login, 1)
 
     def login(self, event):
-        if not self.db: return 
         
         username = self.INTERFACE.ids.username.text
         password = self.INTERFACE.ids.password.text
