@@ -33,7 +33,7 @@ ScreenManager:
                 elevation: 12
 
             MDLabel:
-                text: "Si vous avez oubliés votre mot de passe, contactez l'admin"
+                text: translate('errormdp')
                 theme_text_color: "Custom"
                 text_color: 0.3, 0.3, 0.3, 1
                 font_name: 'fonts/PS.ttf'
@@ -62,7 +62,7 @@ ScreenManager:
 
             MDTextField:
                 id : username
-                hint_text: 'Username'
+                hint_text: translate('Username')
                 pos_hint: {"center_x":0.76, "center_y":0.6}
                 size_hint: 0.35, 0.11
                 icon_right: "account"
@@ -71,7 +71,7 @@ ScreenManager:
 
             MDTextField:
                 id : password
-                hint_text: 'Password'
+                hint_text: translate('Password')
                 password: True
                 pos_hint: {"center_x":0.76, "center_y":0.45}
                 size_hint: 0.35, 0.11
@@ -82,7 +82,7 @@ ScreenManager:
             MDFillRoundFlatIconButton:
                 # on_release : app.root.current = 'Main'
                 on_release : app.loading()
-                text: "S'identifier"
+                text: translate('Se_connecter')
                 font_size: '16sp'
                 bold: True  
                 pos_hint: {"center_x":0.75, "center_y":0.29}
