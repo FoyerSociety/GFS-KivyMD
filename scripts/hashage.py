@@ -5,32 +5,37 @@ sys.path.append("../models")
 from models import Database
 from config import CONFIG
 
+def insert(username,password):
+    
 
+        request = '''
+            INSERT INTO User(username,password) VALUES(%s, %s);
+        '''
+        bd.cursor.execute(request,(username,password))
+        bd.connex.commit()
+
+
+def update(username,password):
+    request = '''
+        UPDATE User SET password = %s WHERE username = %s;
+    '''
+
+    bd.cursor.execute(request,(password,username))
+
+    print(bd.cursor.lastrowid)
+    bd.connex.commit()
+
+    bd.connex.close()
 
 bd = Database(CONFIG)
 
-action = input("New User(n) or Change Password(c)")
-username = hashlib.sha3_256(input("Username : ").encode("utf-8")).hexdigest()
-password = input("New password : ")
+action = input("Choose[Default c] : New User(n) or Change Password(c) :")
+username = input("Username : ")
+password = hashlib.sha3_256(input("Password : ").encode("utf-8")).hexdigest()
 
-if action == "n":
+insert(username,password) if action == "n" else update(username,password)
 
-        request = '''
-            UPDATE User SET password = %s WHERE id=%s
-        '''
-        
-        self.bd.cursor.execute(request,(hashlib.sha3_256(psd[i].encode("utf-8")).hexdigest(), i+1))
-        self.bd.connex.commit()
-        i = i+1
-    self.bd.cursor.close()
-    self.bd.connex.close()
-    return self.passwordHash
-        
-hch = HashPassword().hashage()
-
-print(hch)
-
-
+    
 
 
 
