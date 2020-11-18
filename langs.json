@@ -22,8 +22,8 @@
 "Se_connecter" :
 	{
 		"mg" : "Hiditra",
-		"fr" : "S'identifier",
-		"en" : "Login" 	
+		"fr" : "Connexion",
+		"en" : "Sign In" 	
 	},
 
 "CUISINE" :
@@ -80,6 +80,12 @@
 		"mg" : "Herinandro A",
 		"fr" : "Semaine A",
 		"en" : "Week A" 		
+	},
+"Semaine_B" :
+	{
+		"mg" : "Herinandro B",
+		"fr" : "Semaine B",
+		"en" : "Week B" 		
 	},
 
 "MENAGE" : 
