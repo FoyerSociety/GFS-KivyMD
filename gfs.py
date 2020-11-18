@@ -50,7 +50,10 @@ class GFS(MDApp):
     def __init__(self):
         super().__init__()
         self.db = None
-        self.INTERFACE = Builder.load_file('main.kv')
+
+        with open('main.kv', encoding='utf-8') as f:
+            self.INTERFACE = Builder.load_string(f.read())
+
         self.theme_cls.theme_style= "Light"
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.primary_hue = "A700"
