@@ -127,6 +127,11 @@ ScreenManager:
                                     elevation: 11
                                     icon: "food"
                                     on_release : Tab_cuisine.current = 'Menu_cuisine'
+                                MDTabs:
+                                    Tab:
+                                        text: "Tab1"
+                                    Tab:
+                                        text: "Tab2"
                                 ScreenManager:
                                     id : Tab_cuisine
                                     Screen:
@@ -901,7 +906,7 @@ ScreenManager:
                                             orientation: "vertical"
                                             padding: "15dp"
                                             size_hint: None, None
-                                            size: "160dp", "265dp"
+                                            size: "160dp", "220dp"
                                             pos_hint: {"center_x": 0.72, "center_y": 0.28}
                                             MDIconButton:
                                                 icon: "star"
