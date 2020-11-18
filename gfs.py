@@ -123,6 +123,7 @@ class GFS(MDApp):
         )
 
         self.INTERFACE.ids.tableau_repas.add_widget(tab)
+        
     
 
     def loadConnection(self):
@@ -137,16 +138,14 @@ class GFS(MDApp):
 
         Clock.schedule_once(self.login, 1)
 
+
     def login(self, event):
-        
         username = self.INTERFACE.ids.username.text
         password = self.INTERFACE.ids.password.text
         if not PROD or self.db.login(username,password):
             self.INTERFACE.current = "Main"
             return
-
-
-        # self.INTERFACE.ids.button_login.label_change("S'identifier")
+        
         self.INTERFACE.ids.loader.active = False
         self.INTERFACE.ids.password.text = ""
         self.INTERFACE.ids.button_login.icon = "arrow-right"

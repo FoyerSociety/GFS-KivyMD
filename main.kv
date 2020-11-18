@@ -98,7 +98,7 @@ ScreenManager:
                 size: dp(20), dp(20)
                 pos_hint: {'center_x':0.75, 'center_y':0.29}
                 active: False
-
+            
     Screen:
         id : Main
         name: 'Main'
@@ -795,11 +795,6 @@ ScreenManager:
                                                         text: "Sarino"
                                                         pos_hint: {"x":0.32, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
-                                                        font_size: '30sp'
-                                                    MDLabel:
-                                                        text: "14-11-20"
-                                                        pos_hint: {"x":0.38, "y":0.75}
-                                                        font_name: 'fonts/PS.ttf'
                                                 MDCard:
                                                     orientation: "vertical"
                                                     padding: "15dp"
@@ -833,10 +828,49 @@ ScreenManager:
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:
                                         name:"Grand_menage"
-                                        MDLabel:
-                                            id : Grand_menage
-                                            text:"Grand Menage"
-                                            pos_hint: {"center_x":0.9, "center_y":0.2}
+
+                                        ScrollView:
+
+                                            MDGridLayout:
+                                                cols: 5
+                                                adaptive_height: True
+                                                padding: dp(4), dp(4)
+                                                spacing: dp(4)
+
+                                                SmartTileWithLabel:
+                                                    size_hint_y: None
+                                                    height: "240dp"
+                                                    source: "images/logo.png"
+                                                    text: "Arleme"
+
+                                                SmartTileWithLabel:
+                                                    size_hint_y: None
+                                                    height: "240dp"
+                                                    source: "images/logo.png"
+                                                    text: "Gaetan"
+                                                    tile_text_color: app.theme_cls.accent_color
+
+                                                SmartTileWithLabel:
+                                                    size_hint_y: None
+                                                    height: "240dp"
+                                                    source: "images/logo.png"
+                                                    text: "Landry"
+                                                    tile_text_color: app.theme_cls.accent_color
+                                                
+                                                SmartTileWithLabel:
+                                                    size_hint_y: None
+                                                    height: "240dp"
+                                                    source: "images/logo.png"
+                                                    text: "Landry"
+                                                    tile_text_color: app.theme_cls.accent_color
+                                                
+                                                SmartTileWithLabel:
+                                                    size_hint_y: None
+                                                    height: "240dp"
+                                                    source: "images/logo.png"
+                                                    text: "Landry"
+                                                    tile_text_color: app.theme_cls.accent_color
+                                    
                                     Screen:
                                         name:"ordure"
                                         MDCard:
@@ -914,7 +948,7 @@ ScreenManager:
                                             orientation: "vertical"
                                             padding: "15dp"
                                             size_hint: None, None
-                                            size: "160dp", "265dp"
+                                            size: "160dp", "220dp"
                                             pos_hint: {"center_x": 0.72, "center_y": 0.28}
                                             MDIconButton:
                                                 icon: "star"
