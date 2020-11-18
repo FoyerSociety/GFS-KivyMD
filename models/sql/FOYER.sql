@@ -113,9 +113,10 @@ CREATE TABLE `User` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index pour les tables déchargées
+-- Index pour la table 'User'
 --
-
+  ALTER TABLE `User` 
+    ADD UNIQUE(`username`); 
 --
 -- Index pour la table `Cotisation`
 --
