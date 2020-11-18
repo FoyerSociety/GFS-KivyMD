@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Cotisation` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCEREMENT,
   `amount` float DEFAULT NULL,
   `mounth` varchar(10) DEFAULT NULL,
   `year` int(4) DEFAULT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `Cotisation` (
 --
 
 CREATE TABLE `Date_begin` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCEREMENT,
   `mp` date DEFAULT NULL,
   `ma` date DEFAULT NULL,
   `ck` date DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `Date_begin` (
 --
 
 CREATE TABLE `Dept` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCEREMENT,
   `amount` float DEFAULT NULL,
   `reason` varchar(50) DEFAULT NULL,
   `user_set` int(11) DEFAULT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE `Dept` (
 --
 
 CREATE TABLE `Food` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCEREMENT,
   `plate` varchar(50) DEFAULT NULL,
   `price` float DEFAULT NULL,
   `day` varchar(10) DEFAULT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `Food` (
 --
 
 CREATE TABLE `Transaction` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCEREMENT,
   `date_insert` datetime DEFAULT NULL,
   `amount` float DEFAULT NULL,
   `reason` varchar(50) DEFAULT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE `Transaction` (
 --
 
 CREATE TABLE `User` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCEREMENT,
   `username` varchar(20) DEFAULT NULL,
   `prom` char(3) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
