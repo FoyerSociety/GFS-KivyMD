@@ -16,7 +16,7 @@
 `python gfs.py`
 
 [Run in production mode]
-`python gfs.py`
+`python gfs.py --prod`
 
 ## Developers
 

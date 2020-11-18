@@ -1,0 +1,168 @@
+{
+	"errormdp" : 
+	{
+		"mg" : "Raha hadinonao ny teny miafina, andefaso hafatra ny mpiandraikitra",
+   		"fr" : "Si vous avez oubliés votre mot de passe, contactez l'admin",
+   		"en" : "If you have forgotten your password, contact the admin"
+	},
+
+"Username" :
+	{
+		"mg" : "Anarana",
+		"fr" : "Nom d'utilisateur",
+		"en" : "Username" 
+	},
+	
+"Password" :
+	{
+		"mg" : "Teny miafina",
+		"fr" : "Mot de passe",
+		"en" : "Password" 	
+	},
+"Se_connecter" :
+	{
+		"mg" : "Hiditra",
+		"fr" : "S'identifier",
+		"en" : "Login" 	
+	},
+
+"CUISINE" :
+	{
+		"mg" : "NAHANDRO",
+		"fr" : "CUISINE",
+		"en" : "COOKING" 
+	},
+
+"Tour_cuisine" :
+	{
+ 		"mg" : "anjara nahandro",
+ 		"fr" : "Tour de cuisine",
+ 		"en" : "Cooking turn"
+	},
+
+"Menu_repas":
+	{
+		"mg" : "Sakafo anio",
+		"fr" : "Menu répas",
+		"en" : "Meal menu" 		
+	},
+
+"Hier":
+	{
+		"mg" : "Omaly",
+		"fr" : "Hier",
+		"en" : "Yesterday" 		
+	},
+
+"Aujourd_hui":
+	{
+		"mg" : "Anio",
+		"fr" : "Aujourd'hui",
+		"en" : "Today" 		
+	},
+
+"Demain":
+	{
+		"mg" : "Rahampitso",
+		"fr" : "Demain",
+		"en" : "Tommorow" 		
+	},
+
+"Semaine" :
+	{
+		"mg" : "Ito fampisehoana ito dia mikasika ity herinandro ity, kitiho ny bokotra etsy ambany raha hanovana ny herinandro",
+		"fr" : "Cette affichage concerne la semaine courante, cliquez le bouton ci-dessous pour changer de semaine",
+		"en" : "This display concerns the current week, click the button below to change the week" 		
+	},
+
+"Semaine_A" :
+	{
+		"mg" : "Herinandro A",
+		"fr" : "Semaine A",
+		"en" : "Week A" 		
+	},
+
+"MENAGE" : 
+	{
+		"mg" : "RAHARAHA",
+		"fr" : "MENAGE",
+		"en" : "HOUSEWORK" 		
+	},
+
+"Tour_menage" :
+	{
+		"mg" : "Anjara",
+		"fr" : "Tour de ménage",
+		"en" : "Cleaning turn" 		
+	},
+
+"Autre_menage" :
+	{
+		"mg" : "Ankoatra",
+		"fr" : "Autre ménage",
+		"en" : "other" 		
+	},
+
+"Grand_menage" :
+	{
+		"mg" : "Fandiovana faobe",
+		"fr" : "Grand ménage",
+		"en" : "Spring cleaning" 		
+	},
+
+"Ordures" :
+	{
+		"mg" : "Fako",
+		"fr" : "Ordures",
+		"en" : "Garbage" 		
+	},
+
+"ARGENT" :
+	{
+		"mg" : "VOLA",
+		"fr" : "ARGENT",
+		"en" : "MONEY" 		
+	},
+
+"DETTE" :
+	{
+		"mg" : "TROSA",
+		"fr" : "DETTE",
+		"en" : "DEBT" 		
+	},
+
+"MEMBRES" :
+	{
+		"mg" : "MPIKAMBANA",
+		"fr" : "MEMBRES",
+		"en" : "MEMBERS" 		
+	},
+
+"Cuisine" :
+	{
+		"mg" : "Nahandro",
+		"fr" : "Cuisine",
+		"en" : "Cooking" 		
+	},
+
+"Menage" :
+	{
+		"mg" : "Raharaha",
+		"fr" : "Ménage",
+		"en" : "Housework"		
+	},
+
+"Dette" :
+	{
+		"mg" : "Trosa",
+		"fr" : "Dette",
+		"en" : "Debt"  		
+	},
+
+"Membres" :
+	{
+		"mg" : "Mpikambana",
+		"fr" : "Membres",
+		"en" : "Members"
+	}
+}

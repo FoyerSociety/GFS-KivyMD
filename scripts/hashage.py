@@ -5,34 +5,37 @@ sys.path.append("../models")
 from models import Database
 from config import CONFIG
 
+def insert(username,password):
+    
+
+        request = '''
+            INSERT INTO User(username,password) VALUES(%s, %s);
+        '''
+        bd.cursor.execute(request,(username,password))
+        bd.connex.commit()
 
 
-class HashPassword:
-    def __init__(self):
-        self.bd = Database(CONFIG)
-        self.password = self.bd.sendPassword()
-        self.passwordHash = []
+def update(username,password):
+    request = '''
+        UPDATE User SET password = %s WHERE username = %s;
+    '''
 
+    bd.cursor.execute(request,(password,username))
 
-    def hashage(self):
-        i = 0
-        for psd in self.password:
-            request = '''
-                UPDATE User SET password = %s WHERE id=%s
-            '''
-            self.passwordHash.append(hashlib.sha3_256(psd[i].encode("utf-8")).hexdigest())
-            self.bd.cursor.execute(request,(hashlib.sha3_256(psd[i].encode("utf-8")).hexdigest(), i+1))
-            self.bd.connex.commit()
-            i = i+1
-        self.bd.cursor.close()
-        self.bd.connex.close()
-        return self.passwordHash
-        
-hch = HashPassword().hashage()
+    print(bd.cursor.lastrowid)
+    bd.connex.commit()
 
-print(hch)
+    bd.connex.close()
 
+bd = Database(CONFIG)
 
+action = input("Choose[Default c] : New User(n) or Change Password(c) :")
+username = input("Username : ")
+password = hashlib.sha3_256(input("Password : ").encode("utf-8")).hexdigest()
+
+insert(username,password) if action == "n" else update(username,password)
+
+    
 
 
 
