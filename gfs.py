@@ -125,6 +125,7 @@ class GFS(MDApp):
     def loading(self):
         self.INTERFACE.ids.button_login.text = " "
         self.INTERFACE.ids.button_login.icon = " "
+        self.INTERFACE.ids.loader.color = (1,1,1,1)
         self.INTERFACE.ids.loader.active = True
 
         Clock.schedule_once(self.login, 3)
