@@ -106,6 +106,7 @@ ScreenManager:
             NavigationLayout:
                 ScreenManager:
                     Screen:
+                        
                         ScreenManager:
                             id: mng
                             Screen:
@@ -229,7 +230,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: (translate("Demain")
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -294,7 +295,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.54, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: Translate("Aujourd'hui")
+                                                        text: "Aujourd'hui"
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -1115,6 +1116,8 @@ ScreenManager:
                                     font_name: 'fonts/PS.ttf'
                                     font_style: 'H3'
                                     bold: True
+                                
+
                             Screen:
                                 name: "sc4"
                                 Image:
@@ -1124,7 +1127,7 @@ ScreenManager:
                                     size_hint_y: "0.8"
                                     elevation: 12
                                 MDLabel:
-                                    text: translate("JIRAMA")
+                                    text: "JIRAMA"
                                     pos_hint: {"center_x":1.1, "center_y":0.74}
                                     theme_text_color: "Custom"
                                     text_color: get_color_from_hex("#ffffff")
