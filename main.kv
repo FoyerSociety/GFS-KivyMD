@@ -857,6 +857,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
                                         Image:
                                             source: "images/vitre2.jpg"
                                             pos_hint: {"center_x":0.18, "center_y":0.33}
@@ -889,6 +890,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
                                         Image:
                                             source: "images/wc2.jpg"
                                             pos_hint: {"center_x":0.36, "center_y":0.33}
@@ -921,6 +923,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
                                         Image:
                                             source: "images/vitre2.jpg"
                                             pos_hint: {"center_x":0.54, "center_y":0.33}
@@ -953,6 +956,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
                                         Image:
                                             source: "images/vitre2.jpg"
                                             pos_hint: {"center_x":0.72, "center_y":0.33}
@@ -985,6 +989,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
                                         Image:
                                             source: "images/sol2.png"
                                             pos_hint: {"center_x":0.90, "center_y":0.33}
@@ -1189,7 +1194,7 @@ ScreenManager:
                             
                             CustomToolbar:
                                 id: toolbar
-                                md_bg_color : get_color_from_hex("#e33939")
+                                md_bg_color : get_color_from_hex("#ee4135")
                                 size_hint_y: None
                                 height: self.theme_cls.standard_increment
                                 elevation: 10
@@ -1260,3 +1265,6 @@ ScreenManager:
                                         text: translate("Membres")
                                         on_release:
                                             mng.current = "sc6"
+
+
+        

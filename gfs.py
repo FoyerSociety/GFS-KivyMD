@@ -39,11 +39,12 @@ from kivy.metrics import dp
 
 
 class CustomToolbar(ThemableBehavior, RectangularElevationBehavior, MDBoxLayout):
-
-
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+
+class Content(BoxLayout):
+    pass
 
 
 class GFS(MDApp):
@@ -169,6 +170,24 @@ class GFS(MDApp):
                     ),
                     MDFlatButton(
                         text="ANNULER", text_color=self.theme_cls.primary_color
+                    ),
+                ],
+            )
+        self.dialog.open()
+    
+    
+    def show_edit_dialog(self):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                title="Editer",
+                type="custom",
+                content_cls=Content(),
+                buttons=[
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color
+                    ),
+                    MDFlatButton(
+                        text="VALIDER", text_color=self.theme_cls.primary_color
                     ),
                 ],
             )

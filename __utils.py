@@ -16,4 +16,3 @@ def translate(key, lang='fr'):
 	else:
 		return mot_cle  
 	return trans.get(key).get(lang)
-  
