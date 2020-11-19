@@ -57,7 +57,7 @@ class GFS(MDApp):
             self.INTERFACE = Builder.load_string(f.read())
 
         self.theme_cls.theme_style= "Light"
-        self.theme_cls.primary_palette = "DeepOrange"
+        self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "A700"
         self.__tableau()
 
