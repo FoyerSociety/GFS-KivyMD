@@ -828,49 +828,155 @@ ScreenManager:
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:
                                         name:"Grand_menage"
-
-                                        ScrollView:
-
-                                            MDGridLayout:
-                                                cols: 5
-                                                adaptive_height: True
-                                                padding: dp(4), dp(4)
-                                                spacing: dp(4)
-
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Arleme"
-
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Gaetan"
-                                                    tile_text_color: app.theme_cls.accent_color
-
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Landry"
-                                                    tile_text_color: app.theme_cls.accent_color
-                                                
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Landry"
-                                                    tile_text_color: app.theme_cls.accent_color
-                                                
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Landry"
-                                                    tile_text_color: app.theme_cls.accent_color
-                                    
+                                        MDLabel:
+                                            text: "Vitres"
+                                            pos_hint: {"center_x":0.66, "center_y":0.47}
+                                            font_size: '15sp'
+                                        MDLabel:
+                                            text: "Landry"
+                                            pos_hint: {"center_x":0.66, "center_y":0.19}
+                                            font_size: '15sp'
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.16, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.205, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                        Image:
+                                            source: "images/vitre2.jpg"
+                                            pos_hint: {"center_x":0.18, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDLabel:
+                                            text: "Douche et WC"
+                                            pos_hint: {"center_x":0.81, "center_y":0.47}
+                                            font_size: '15sp'
+                                        MDLabel:
+                                            text: "Dinahasina,Sarino"
+                                            pos_hint: {"center_x":0.80, "center_y":0.19}
+                                            font_size: '15sp'
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.34, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.385, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                        Image:
+                                            source: "images/wc2.jpg"
+                                            pos_hint: {"center_x":0.36, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDLabel:
+                                            text: "Salle Info"
+                                            pos_hint: {"center_x":1.01, "center_y":0.47}
+                                            font_size: '15sp'
+                                        MDLabel:
+                                            text: "Casimir,Arleme"
+                                            pos_hint: {"center_x":0.99, "center_y":0.19}
+                                            font_size: '15sp'
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.52, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.565, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                        Image:
+                                            source: "images/vitre2.jpg"
+                                            pos_hint: {"center_x":0.54, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDLabel:
+                                            text: "Instensils"
+                                            pos_hint: {"center_x":1.18, "center_y":0.47}
+                                            font_size: '15sp'
+                                        MDLabel:
+                                            text: "Aina,Zacké,Haja"
+                                            pos_hint: {"center_x":1.17, "center_y":0.19}
+                                            font_size: '15sp'
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.70, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.745, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                        Image:
+                                            source: "images/vitre2.jpg"
+                                            pos_hint: {"center_x":0.72, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDLabel:
+                                            text: "Sols"
+                                            pos_hint: {"center_x":1.38, "center_y":0.47}
+                                            font_size: '15sp'
+                                        MDLabel:
+                                            text: "Gaetan,Fabien"
+                                            pos_hint: {"center_x":1.35, "center_y":0.19}
+                                            font_size: '15sp'
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.88, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.925, "center_y":0.12}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                        Image:
+                                            source: "images/sol2.png"
+                                            pos_hint: {"center_x":0.90, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        
+                                        
+                                       
+                                                                                
                                     Screen:
                                         name:"ordure"
                                         MDCard:
