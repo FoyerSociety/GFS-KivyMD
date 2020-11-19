@@ -32,6 +32,8 @@ from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.spinner import MDSpinner
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
 from kivy.metrics import dp
 
 
@@ -151,5 +153,25 @@ class GFS(MDApp):
         self.INTERFACE.ids.button_login.icon = "arrow-right"
         self.INTERFACE.ids.button_login.text = "S'identifier"
         self.INTERFACE.ids.errorLogin.text = "Le mot de passe est incorrect !"
+    
+    
+    
+    
+    dialog = None
+    def show_alert_dialog(self):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                title="Réinitialisation ?",
+                text="Voulez-vous vraiment réinitialiser cette tâche ?",
+                buttons=[
+                    MDFlatButton(
+                        text="VALIDER", text_color=self.theme_cls.primary_color
+                    ),
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color
+                    ),
+                ],
+            )
+        self.dialog.open()
 
 GFS().run()      
