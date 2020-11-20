@@ -65,7 +65,7 @@ class GFS(MDApp):
         self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "A700"
         for i in range(10):
-            self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
+            self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#004b6e")
         self.__tableau()
         self.quit_dialog = None
 
