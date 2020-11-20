@@ -2,7 +2,7 @@ import json
 
 
 
-def translate(key, lang='fr'):
+def translate(key, lang='mg'):
 	"""
 	  Fonction pour traduire un mot de reference par rapport 
 	    à son clé dans le fichier langs.json """

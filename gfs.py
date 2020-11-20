@@ -5,11 +5,11 @@ if '--prod' in sys.argv:
     sys.argv.remove('--prod')
 else: PROD = None 
 
-from models.models import Database
+from models.models import Database, _SESSION
 from models.config import CONFIG
 ########################################################
 from kivy.config import Config 
-Config.set('graphics', 'resizable', False)
+# Config.set('graphics', 'resizable', False)
 Config.set('graphics', 'width', '978')
 Config.set('graphics', 'height', '628')
 
@@ -33,6 +33,8 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.spinner import MDSpinner
 from kivy.metrics import dp
+from kivymd.uix.button import MDFlatButton
+from kivymd.uix.dialog import MDDialog
 
 
 
@@ -58,29 +60,57 @@ class GFS(MDApp):
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.primary_hue = "A700"
         self.__tableau()
+        self.quit_dialog = None
 
 
     def build(self):
         
         menu_items = [
             {"icon": "account", "text": "Profil"},
-            {"icon": "logout", "text": "Déconnexion"}
+            {"icon": "logout", "text": "Déconnexion"},
+            {"icon": "exit-run", "text": "Quit"}
         ]
         self.menu = MDDropdownMenu(
             caller=self.INTERFACE.ids.button_2,
             items=menu_items,
             width_mult=5,
             )
-        self.menu.bind(on_release=self.set_item)
+        self.menu.bind(on_release=self.logout)
 
         return self.INTERFACE
-    
 
-    def set_item(self, instance_menu, instance_menu_item):
-        def set_item(interval):
-            self.screen.ids.field.text = instance_menu_item.text
-            instance_menu.dismiss()
-        Clock.schedule_once(set_item, 0.5)    
+
+    def logout(self, menu, item):
+        if item.text == "Déconnexion":
+            _SESSION = None
+            _SESSION = None
+            self.INTERFACE.current = "Login"
+            self.menu.dismiss()
+        if item.text == "Quit":
+            self.show_quit_dialog()
+
+            
+    def show_quit_dialog(self):
+        if not self.quit_dialog:
+            self.quit_dialog = MDDialog(
+                text="Etes vous sur de quittez ?",
+                buttons=[
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color,on_press=self.close_quit_Dialog
+                    ),
+                    MDFlatButton(
+                        text="CONFIRMER", text_color=self.theme_cls.primary_color,on_press=self.close_quit_Dialog
+                    ),
+                ],
+            )
+            self.quit_dialog.bind(on_release=self.close_quit_Dialog)
+        self.quit_dialog.open()
+
+    def close_quit_Dialog(self,btn):
+        if btn.text == "ANNULER":
+            self.quit_dialog.dismiss()
+        elif btn.text ==  "CONFIRMER":
+            self.stop()
 
 
     def on_start(self):
@@ -124,7 +154,6 @@ class GFS(MDApp):
 
         self.INTERFACE.ids.tableau_repas.add_widget(tab)
         
-    
 
     def loadConnection(self):
         if not self.db and PROD: 
@@ -144,12 +173,19 @@ class GFS(MDApp):
         password = self.INTERFACE.ids.password.text
         if not PROD or self.db.login(username,password):
             self.INTERFACE.current = "Main"
+            self.INTERFACE.ids.username.text = ""
+            self.INTERFACE.ids.errorLogin.text
+            self.initialisaion()
+
             return
-        
+        self.initialisaion()
+        self.INTERFACE.ids.errorLogin.text = "Le mot de passe est incorrect !"
+
+
+    def initialisaion(self):
         self.INTERFACE.ids.loader.active = False
         self.INTERFACE.ids.password.text = ""
         self.INTERFACE.ids.button_login.icon = "arrow-right"
         self.INTERFACE.ids.button_login.text = "S'identifier"
-        self.INTERFACE.ids.errorLogin.text = "Le mot de passe est incorrect !"
 
-GFS().run()      
+GFS().run()

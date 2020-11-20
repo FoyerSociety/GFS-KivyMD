@@ -2,10 +2,11 @@ import mysql.connector
 import hashlib
 
 ###Register the __SESSION on login
+
 _SESSION = {
-    "username" : None,
-    "priv" : None
-}
+        "username" : None,
+        "priv" : None
+    }
 
 class Database:
     def __init__(self, config):
