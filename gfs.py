@@ -21,6 +21,7 @@ from kivymd.font_definitions import fonts
 from kivy.factory import Factory
 from kivy.lang import Builder
 from kivy.clock import Clock
+from kivy.utils import get_color_from_hex
 
 ########################################################
 from kivymd.app import MDApp
@@ -37,6 +38,7 @@ from kivymd.uix.button import MDFlatButton
 from kivy.metrics import dp
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
+
 
 
 
@@ -62,6 +64,8 @@ class GFS(MDApp):
         self.theme_cls.theme_style= "Light"
         self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "A700"
+        for i in range(10):
+            self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
         self.__tableau()
         self.quit_dialog = None
 
@@ -135,13 +139,13 @@ class GFS(MDApp):
             ],
             row_data=[
                 (
-                    "Trondro frite",
-                    "Petsay",
-                    "Akoho Sauce",
-                    "Kitoza",
-                    "Chou Sauce",
-                    "Tsaramaso",
-                    "Légumes",
+                    "Corgety frite",
+                    "Petsay @ atody",
+                    "Akoho sy potikena",
+                    "Kitoza rony",
+                    "Chou sy ravitot",
+                    "Tsaramaso manga",
+                    "Légumes atono",
                 ),
                 (
                     "4 500 Ar",
