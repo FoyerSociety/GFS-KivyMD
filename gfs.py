@@ -32,6 +32,8 @@ from kivymd.uix.menu import MDDropdownMenu
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.spinner import MDSpinner
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.button import MDFlatButton
 from kivy.metrics import dp
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
@@ -39,11 +41,12 @@ from kivymd.uix.dialog import MDDialog
 
 
 class CustomToolbar(ThemableBehavior, RectangularElevationBehavior, MDBoxLayout):
-
-
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+
+class Content(BoxLayout):
+    pass
 
 
 class GFS(MDApp):
@@ -57,7 +60,7 @@ class GFS(MDApp):
             self.INTERFACE = Builder.load_string(f.read())
 
         self.theme_cls.theme_style= "Light"
-        self.theme_cls.primary_palette = "DeepOrange"
+        self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "A700"
         self.__tableau()
         self.quit_dialog = None
@@ -187,5 +190,41 @@ class GFS(MDApp):
         self.INTERFACE.ids.password.text = ""
         self.INTERFACE.ids.button_login.icon = "arrow-right"
         self.INTERFACE.ids.button_login.text = "S'identifier"
+    
+
+    dialog = None
+    def show_alert_dialog(self):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                title="Réinitialisation ?",
+                text="Voulez-vous vraiment réinitialiser cette tâche ?",
+                buttons=[
+                    MDFlatButton(
+                        text="VALIDER", text_color=self.theme_cls.primary_color
+                    ),
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color
+                    ),
+                ],
+            )
+        self.dialog.open()
+    
+    
+    def show_edit_dialog(self):
+        if not self.dialog:
+            self.dialog = MDDialog(
+                title="Editer",
+                type="custom",
+                content_cls=Content(),
+                buttons=[
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color
+                    ),
+                    MDFlatButton(
+                        text="VALIDER", text_color=self.theme_cls.primary_color
+                    ),
+                ],
+            )
+        self.dialog.open()
 
 GFS().run()

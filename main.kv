@@ -106,6 +106,7 @@ ScreenManager:
             NavigationLayout:
                 ScreenManager:
                     Screen:
+                        
                         ScreenManager:
                             id: mng
                             Screen:
@@ -117,7 +118,7 @@ ScreenManager:
                                     size_hint_y: "0.8"
                                     elevation: 12
                                 MDLabel:
-                                    text: "CUISINE"
+                                    text: translate("CUISINE")
                                     pos_hint: {"center_x":1.1, "center_y":0.74}
                                     theme_text_color: "Custom"
                                     text_color: get_color_from_hex("#ffffff")
@@ -125,7 +126,7 @@ ScreenManager:
                                     font_style: 'H3'
                                     bold: True
                                 MDFillRoundFlatIconButton:
-                                    text: "Tour de cuisine"
+                                    text: translate("Tour_cuisine")
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.40, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -133,7 +134,7 @@ ScreenManager:
                                     icon: "sync"
                                     on_release : Tab_cuisine.current = 'Tour_cuisine'
                                 MDFillRoundFlatIconButton:
-                                    text: "Menu répas"
+                                    text: translate("Menu_repas")
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.68, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -167,7 +168,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.255, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Hier"
+                                                        text: translate("Hier")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -198,7 +199,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.54, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Aujourd'hui"
+                                                        text: translate("Aujourd_hui")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -229,7 +230,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Demain"
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -263,7 +264,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.255, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Hier"
+                                                        text: translate("Hier")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -325,7 +326,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Demain"
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -352,7 +353,7 @@ ScreenManager:
                                     Screen:
                                         name:"Menu_cuisine"
                                         MDLabel:
-                                            text:"Cette affichage concerne la semaine courante, cliquez le bouton ci-dessous pour changer de semaine"
+                                            text: translate("Semaine")
                                             pos_hint : {"center_x":0.715, "center_y":0.49}
                                             font_size: "14sp"
                                             font_style: "Subtitle2"
@@ -365,7 +366,7 @@ ScreenManager:
                                         MDFillRoundFlatIconButton:
                                             pos_hint : {"center_x":0.535, "center_y":0.07}
                                             size_hint: 0.15, 0.06
-                                            text: "Semaine A"
+                                            text: translate("Semaine_A")
                                             icon: "chevron-right"
                                             font_size: "16sp"
                             Screen:
@@ -377,7 +378,7 @@ ScreenManager:
                                     size_hint_y: "0.8"
                                     elevation: 12
                                 MDLabel:
-                                    text: "MENAGE"
+                                    text: translate("MENAGE")
                                     pos_hint: {"center_x":1.1, "center_y":0.74}
                                     theme_text_color: "Custom"
                                     text_color: get_color_from_hex("#ffffff")
@@ -385,7 +386,7 @@ ScreenManager:
                                     font_style: 'H3'
                                     bold: True
                                 MDFillRoundFlatIconButton:
-                                    text: "Tour de ménage"
+                                    text: translate("Tour_menage")
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.21, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -393,7 +394,7 @@ ScreenManager:
                                     icon: "sync"
                                     on_release : Tab_menage.current = 'Tour_menage'
                                 MDFillRoundFlatIconButton:
-                                    text: "Autre ménage"
+                                    text: translate("Autre_menage")
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.43, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -401,7 +402,7 @@ ScreenManager:
                                     icon: "sync"
                                     on_release : Tab_menage.current = 'Autre_menage'
                                 MDFillRoundFlatIconButton:
-                                    text: "Grand ménage"
+                                    text: translate("Grand_menage")
                                     font_size: '16sp'
                                     pos_hint: {"center_x":0.65, "center_y":0.59}
                                     size_hint: 0.18, 0.06
@@ -420,7 +421,7 @@ ScreenManager:
                                 ScreenManager:
                                     id : Tab_menage
                                     Screen:
-                                        name:"Tour_menage"
+                                        name: "Tour_menage"
                                         MDIconButton:
                                             icon: "chevron-left"
                                             pos_hint: {"center_x": 0.1, "center_y": 0.28}
@@ -444,7 +445,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.255, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Hier"
+                                                        text: translate("Hier")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -475,7 +476,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.54, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Aujourd'hui"
+                                                        text: translate("Aujourd_hui")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -506,7 +507,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Demain"
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -539,7 +540,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.255, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Hier"
+                                                        text: translate("Hier")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -570,7 +571,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.54, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Aujourd'hui"
+                                                        text: translate("Aujourd_hui")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -601,7 +602,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Demain"
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -650,7 +651,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.255, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Hier"
+                                                        text: translate("Hier")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -681,7 +682,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.54, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Aujourd'hui"
+                                                        text: translate("Aujourd_hui")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -712,7 +713,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Demain"
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -745,7 +746,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.255, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Hier"
+                                                        text: translate("Hier")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -776,7 +777,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.54, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Aujourd'hui"
+                                                        text: translate("Aujourd_hui")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -802,7 +803,7 @@ ScreenManager:
                                                     size: "250dp", "220dp"
                                                     pos_hint: {"center_x": 0.82, "center_y": 0.28}
                                                     MDLabel:
-                                                        text: "Demain"
+                                                        text: translate("Demain")
                                                         font_name: 'fonts/PS.ttf'
                                                         font_style: 'Subtitle2'
                                                         theme_text_color: "Custom"
@@ -828,49 +829,176 @@ ScreenManager:
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:
                                         name:"Grand_menage"
-
-                                        ScrollView:
-
-                                            MDGridLayout:
-                                                cols: 5
-                                                adaptive_height: True
-                                                padding: dp(4), dp(4)
-                                                spacing: dp(4)
-
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Arleme"
-
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Gaetan"
-                                                    tile_text_color: app.theme_cls.accent_color
-
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Landry"
-                                                    tile_text_color: app.theme_cls.accent_color
-                                                
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Landry"
-                                                    tile_text_color: app.theme_cls.accent_color
-                                                
-                                                SmartTileWithLabel:
-                                                    size_hint_y: None
-                                                    height: "240dp"
-                                                    source: "images/logo.png"
-                                                    text: "Landry"
-                                                    tile_text_color: app.theme_cls.accent_color
-                                    
+                                        MDRaisedButton:
+                                            text: "Vitres"
+                                            pos_hint: {"center_x":0.18, "center_y":0.47}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDRaisedButton:
+                                            text: "Landry"
+                                            pos_hint: {"center_x":0.18, "center_y":0.192}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                            
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.16, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                            on_release : app.show_alert_dialog()
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.205, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
+                                        Image:
+                                            source: "images/vitre2.jpg"
+                                            pos_hint: {"center_x":0.18, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDRaisedButton:
+                                            text: "Douche et WC"
+                                            pos_hint: {"center_x":0.36, "center_y":0.47}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDRaisedButton:
+                                            text: "Dinahasina-Sarino"
+                                            pos_hint: {"center_x":0.36, "center_y":0.192}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.34, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                            on_release : app.show_alert_dialog()
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.385, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
+                                        Image:
+                                            source: "images/wc2.jpg"
+                                            pos_hint: {"center_x":0.36, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDRaisedButton:
+                                            text: "Salle Info"
+                                            pos_hint: {"center_x":0.54, "center_y":0.47}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDRaisedButton:
+                                            text: "Casimir-Arleme"
+                                            pos_hint: {"center_x":0.54, "center_y":0.192}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.52, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                            on_release : app.show_alert_dialog()
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.565, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
+                                        Image:
+                                            source: "images/vitre2.jpg"
+                                            pos_hint: {"center_x":0.54, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDRaisedButton:
+                                            text: "Instensils"
+                                            pos_hint: {"center_x":0.72, "center_y":0.47}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDRaisedButton:
+                                            text: "Aina-Haja-Zacké"
+                                            pos_hint: {"center_x":0.72, "center_y":0.192}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.70, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                            on_release : app.show_alert_dialog()
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.745, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
+                                        Image:
+                                            source: "images/vitre2.jpg"
+                                            pos_hint: {"center_x":0.72, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        MDRaisedButton:
+                                            text: "Sols"
+                                            pos_hint: {"center_x":0.90, "center_y":0.47}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDRaisedButton:
+                                            text: "Gaetan-Fabien"
+                                            pos_hint: {"center_x":0.90, "center_y":0.192}
+                                            font_size: '15sp'
+                                            size_hint: 0.17, 0.06
+                                        MDFloatingActionButton:
+                                            icon: "trash-can"
+                                            pos_hint: {"center_x":0.88, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#f04d4d")
+                                            elevation_normal: 0
+                                            on_release : app.show_alert_dialog()
+                                        MDFloatingActionButton:
+                                            icon: "pencil"
+                                            pos_hint: {"center_x":0.925, "center_y":0.10}
+                                            user_font_size: "15sp"
+                                            theme_text_color: "Custom"
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#4df070")
+                                            elevation_normal: 0
+                                            on_release: app.show_edit_dialog()
+                                        Image:
+                                            source: "images/sol2.png"
+                                            pos_hint: {"center_x":0.90, "center_y":0.33}
+                                            size_hint_x: "0.23"
+                                            size_hint_y: "0.23"
+                                        
+                                        
+                                       
+                                                                                
                                     Screen:
                                         name:"ordure"
                                         MDCard:
@@ -1002,13 +1130,15 @@ ScreenManager:
                                     size_hint_y: "0.8"
                                     elevation: 12
                                 MDLabel:
-                                    text: "ARGENT"
+                                    text: translate("ARGENT")
                                     pos_hint: {"center_x":1.1, "center_y":0.74}
                                     theme_text_color: "Custom"
                                     text_color: get_color_from_hex("#ffffff")
                                     font_name: 'fonts/PS.ttf'
                                     font_style: 'H3'
                                     bold: True
+                                
+
                             Screen:
                                 name: "sc4"
                                 Image:
@@ -1050,7 +1180,7 @@ ScreenManager:
                                     size_hint_y: "0.8"
                                     elevation: 12
                                 MDLabel:
-                                    text: "MEMBRES"
+                                    text: translate("MEMBRES")
                                     pos_hint: {"center_x":1.1, "center_y":0.74}
                                     theme_text_color: "Custom"
                                     text_color: get_color_from_hex("#ffffff")
@@ -1064,7 +1194,7 @@ ScreenManager:
                             
                             CustomToolbar:
                                 id: toolbar
-                                md_bg_color : get_color_from_hex("#FF5722")
+                                md_bg_color : get_color_from_hex("#ee4135")
                                 size_hint_y: None
                                 height: self.theme_cls.standard_increment
                                 elevation: 10
@@ -1085,7 +1215,7 @@ ScreenManager:
                                     id: button_2
                                     icon: "dots-vertical"
                                     text:"Arleme"
-                                    pos_hint: {"center_y": .5}
+                                    pos_hint: {"center_x":.8, "center_y": .5}
                                     on_release: app.menu.open()
 
                                         
@@ -1101,19 +1231,19 @@ ScreenManager:
                                     
                                     MDNavigationRailItem:
                                         icon: "food"
-                                        text: "Cuisine"
+                                        text: translate("Cuisine")
                                         on_release:
                                             mng.current = "sc1"
                                     
                                     MDNavigationRailItem:
                                         icon: "broom"
-                                        text: "Ménage"
+                                        text: translate("Menage")
                                         on_release:
                                             mng.current = "sc2"
                                     
                                     MDNavigationRailItem:
                                         icon: "currency-eur"
-                                        text: "Cotisation"
+                                        text: translate("Cotisation")
                                         on_release:
                                             mng.current = "sc3"
                                     
@@ -1125,12 +1255,15 @@ ScreenManager:
                                     
                                     MDNavigationRailItem:
                                         icon: "backup-restore"
-                                        text: "Trosa"
+                                        text: translate("Dette")
                                         on_release:
                                             mng.current = "sc5"
                                     
                                     MDNavigationRailItem:
                                         icon: "account-multiple"
-                                        text: "Membres"
+                                        text: translate("Membres")
                                         on_release:
                                             mng.current = "sc6"
+
+
+        

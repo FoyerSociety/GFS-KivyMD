@@ -170,5 +170,12 @@
 		"mg" : "Mpikambana",
 		"fr" : "Membres",
 		"en" : "Members"
+	},
+"Cotisation" :
+	{
+		"mg" : "Tsipaipaika",
+		"fr" : "Cotisation",
+		"en" : "contribution"
+
 	}
 }
