@@ -5,6 +5,20 @@
 #: import translate __utils.translate
 
 
+# <Content>
+#     id: content_id
+#     orientation: "vertical"
+#     spacing: "12dp"
+#     size_hint_y: None
+#     height: "120dp"
+
+#     MDTextField:
+#         id : tache
+#         hint_text: "Tâche"
+#     MDTextField:
+#         id : binome
+#         hint_text: "Binôme"
+
 ScreenManager:
     id: managescreen
     transition : SlideTransition(duration=.50)
@@ -853,6 +867,7 @@ ScreenManager:
                                             elevation_normal: 0
                                             on_release : app.show_alert_dialog()
                                         MDFloatingActionButton:
+                                            id : edit1
                                             icon: "pencil"
                                             pos_hint: {"center_x":0.205, "center_y":0.10}
                                             user_font_size: "15sp"
@@ -860,7 +875,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
-                                            on_release: app.show_edit_dialog()
+                                            on_release: app.show_edit_dialog(2)
                                         Image:
                                             source: "images/vitre2.jpg"
                                             pos_hint: {"center_x":0.18, "center_y":0.33}
@@ -889,6 +904,7 @@ ScreenManager:
                                             elevation_normal: 0
                                             on_release : app.show_alert_dialog()
                                         MDFloatingActionButton:
+                                            id : edit2
                                             icon: "pencil"
                                             pos_hint: {"center_x":0.385, "center_y":0.10}
                                             user_font_size: "15sp"
@@ -896,7 +912,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
-                                            on_release: app.show_edit_dialog()
+                                            on_release: app.show_edit_dialog(4)
                                         Image:
                                             source: "images/wc2.jpg"
                                             pos_hint: {"center_x":0.36, "center_y":0.33}
@@ -924,6 +940,7 @@ ScreenManager:
                                             elevation_normal: 0
                                             on_release : app.show_alert_dialog()
                                         MDFloatingActionButton:
+                                            id : edit3
                                             icon: "pencil"
                                             pos_hint: {"center_x":0.565, "center_y":0.10}
                                             user_font_size: "15sp"
@@ -931,7 +948,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
-                                            on_release: app.show_edit_dialog()
+                                            on_release: app.show_edit_dialog(6)
                                         Image:
                                             source: "images/vitre2.jpg"
                                             pos_hint: {"center_x":0.54, "center_y":0.33}
@@ -959,6 +976,7 @@ ScreenManager:
                                             elevation_normal: 0
                                             on_release : app.show_alert_dialog()
                                         MDFloatingActionButton:
+                                            id : edit4
                                             icon: "pencil"
                                             pos_hint: {"center_x":0.745, "center_y":0.10}
                                             user_font_size: "15sp"
@@ -966,7 +984,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
-                                            on_release: app.show_edit_dialog()
+                                            on_release: app.show_edit_dialog(8)
                                         Image:
                                             source: "images/vitre2.jpg"
                                             pos_hint: {"center_x":0.72, "center_y":0.33}
@@ -994,6 +1012,7 @@ ScreenManager:
                                             elevation_normal: 0
                                             on_release : app.show_alert_dialog()
                                         MDFloatingActionButton:
+                                            id : edit5
                                             icon: "pencil"
                                             pos_hint: {"center_x":0.925, "center_y":0.10}
                                             user_font_size: "15sp"
@@ -1001,7 +1020,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#4df070")
                                             elevation_normal: 0
-                                            on_release: app.show_edit_dialog()
+                                            on_release: app.show_edit_dialog(10)
                                         Image:
                                             source: "images/sol2.png"
                                             pos_hint: {"center_x":0.90, "center_y":0.33}

@@ -1,44 +1,44 @@
+########################################################
 # -*- coding: utf-8 -*-
 import sys, time
 if '--prod' in sys.argv:
     PROD = True
     sys.argv.remove('--prod')
 else: PROD = None 
+########################################################
 
 from models.models import Database, _SESSION
 from models.config import CONFIG
 ########################################################
 from kivy.config import Config 
-# Config.set('graphics', 'resizable', False)
+Config.set('graphics', 'resizable', False)
 Config.set('graphics', 'width', '978')
 Config.set('graphics', 'height', '628')
 
 ########################################################
 from kivy.uix.screenmanager import Screen, ScreenManager
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
+from kivy.utils import get_color_from_hex
 from kivymd.font_definitions import fonts
+from kivy.uix.boxlayout import BoxLayout
 from kivy.factory import Factory
 from kivy.lang import Builder
 from kivy.clock import Clock
-from kivy.utils import get_color_from_hex
 
 ########################################################
-from kivymd.app import MDApp
-from kivymd.theming import ThemableBehavior
-from kivymd.uix.tab import MDTabsBase
-from kivymd.icon_definitions import md_icons
-from kivymd.uix.behaviors import RectangularElevationBehavior
-from kivymd.uix.menu import MDDropdownMenu
-from kivymd.uix.boxlayout import MDBoxLayout
-from kivymd.uix.datatables import MDDataTable
-from kivymd.uix.spinner import MDSpinner
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDFlatButton
 from kivy.metrics import dp
-from kivymd.uix.button import MDFlatButton
+from kivymd.app import MDApp
+from kivymd.uix.label import MDLabel
 from kivymd.uix.dialog import MDDialog
-
+from kivymd.uix.button import MDFlatButton
+from kivymd.uix.menu import MDDropdownMenu
+from kivymd.theming import ThemableBehavior
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.icon_definitions import md_icons
+from kivymd.uix.textfield import MDTextField
+from kivymd.uix.datatables import MDDataTable
+from kivymd.uix.dropdownitem import MDDropDownItem
+from kivymd.uix.behaviors import RectangularElevationBehavior
 
 
 
@@ -47,31 +47,29 @@ class CustomToolbar(ThemableBehavior, RectangularElevationBehavior, MDBoxLayout)
         super().__init__(**kwargs)
 
 
-class Content(BoxLayout):
-    pass
-
 
 class GFS(MDApp):
-
-
     def __init__(self):
         super().__init__()
-        self.db = None
-
+        
+        ###Load the kv file with the encoding utf8 [!important in winidows]
         with open('main.kv', encoding='utf-8') as f:
             self.INTERFACE = Builder.load_string(f.read())
 
-        self.theme_cls.theme_style= "Light"
+        ###Application color_theme parameter in general
         self.theme_cls.primary_palette = "Red"
         self.theme_cls.primary_hue = "A700"
-        for i in range(10):
-            self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
-        self.__tableau()
+        self.theme_cls.theme_style= "Light"
+
         self.quit_dialog = None
+        self.dialog = None
+        self.db = None
+        self.__tableau()
 
+        ###For the MDRaisedButton in Grand-menage
+        for i in range(10): self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
 
-    def build(self):
-        
+        ###The dropdown menu in the profile button in the top-right
         menu_items = [
             {"icon": "account", "text": "Profil"},
             {"icon": "logout", "text": "Déconnexion"},
@@ -81,11 +79,60 @@ class GFS(MDApp):
             caller=self.INTERFACE.ids.button_2,
             items=menu_items,
             width_mult=5,
-            )
+        )
         self.menu.bind(on_release=self.logout)
 
+
+    ###Instance of the Database class
+    def on_start(self):
+        if PROD:
+            self.db = Database(CONFIG)
+
+
+    def build(self):
         return self.INTERFACE
 
+
+####################################################
+##          About login                            #
+####################################################
+
+    def loadConnection(self):
+        if not self.db and PROD: 
+            self.INTERFACE.ids.errorLogin.text = "Vérifier votre connexion Internet"
+            return
+
+        self.INTERFACE.ids.button_login.text = " "
+        self.INTERFACE.ids.button_login.icon = " "
+        self.INTERFACE.ids.loader.color = (1,1,1,1)
+        self.INTERFACE.ids.loader.active = True
+
+        Clock.schedule_once(self.login, 1)
+
+
+    def initialisaion(self):
+        self.INTERFACE.ids.loader.active = False
+        self.INTERFACE.ids.password.text = ""
+        self.INTERFACE.ids.button_login.icon = "arrow-right"
+        self.INTERFACE.ids.button_login.text = "S'identifier"
+
+
+    def login(self, event):
+        username = self.INTERFACE.ids.username.text
+        password = self.INTERFACE.ids.password.text
+        if not PROD or self.db.login(username,password):
+            self.INTERFACE.current = "Main"
+            self.INTERFACE.ids.username.text = ""
+            self.INTERFACE.ids.errorLogin.text
+            self.initialisaion()
+
+            return
+        self.initialisaion()
+        self.INTERFACE.ids.errorLogin.text = "Le mot de passe est incorrect !"
+
+####################################################
+##             Logout || Quit the app              #
+####################################################
 
     def logout(self, menu, item):
         if item.text == "Déconnexion":
@@ -95,8 +142,7 @@ class GFS(MDApp):
             self.menu.dismiss()
         if item.text == "Quit":
             self.show_quit_dialog()
-
-            
+        
     def show_quit_dialog(self):
         if not self.quit_dialog:
             self.quit_dialog = MDDialog(
@@ -116,15 +162,13 @@ class GFS(MDApp):
     def close_quit_Dialog(self,btn):
         if btn.text == "ANNULER":
             self.quit_dialog.dismiss()
-        elif btn.text ==  "CONFIRMER":
+        else:
             self.stop()
 
+####################################################
+##             Tableau in the cook menu            #
+####################################################
 
-    def on_start(self):
-        if PROD:
-            self.db = Database(CONFIG)
-    
-    
     def __tableau(self):
         tab = MDDataTable(
             size_hint=(0.9, 0.3),
@@ -139,13 +183,13 @@ class GFS(MDApp):
             ],
             row_data=[
                 (
-                    "Corgety frite",
-                    "Petsay @ atody",
-                    "Akoho sy potikena",
-                    "Kitoza rony",
-                    "Chou sy ravitot",
-                    "Tsaramaso manga",
-                    "Légumes atono",
+                    "Oeuf sauce",
+                    "Kitoza",
+                    "Voanjobory",
+                    "Soupe Légume",
+                    "Poulet frite",
+                    "Tsaramaso",
+                    "Brède",
                 ),
                 (
                     "4 500 Ar",
@@ -158,46 +202,16 @@ class GFS(MDApp):
                 )
             ],
         )
-
-        self.INTERFACE.ids.tableau_repas.add_widget(tab)
         
-
-    def loadConnection(self):
-        if not self.db and PROD: 
-            self.INTERFACE.ids.errorLogin.text = "Vérifier votre connexion Internet"
-            return
-
-        self.INTERFACE.ids.button_login.text = " "
-        self.INTERFACE.ids.button_login.icon = " "
-        self.INTERFACE.ids.loader.color = (1,1,1,1)
-        self.INTERFACE.ids.loader.active = True
-
-        Clock.schedule_once(self.login, 1)
+        self.INTERFACE.ids.tableau_repas.add_widget(tab)
 
 
-    def login(self, event):
-        username = self.INTERFACE.ids.username.text
-        password = self.INTERFACE.ids.password.text
-        if not PROD or self.db.login(username,password):
-            self.INTERFACE.current = "Main"
-            self.INTERFACE.ids.username.text = ""
-            self.INTERFACE.ids.errorLogin.text
-            self.initialisaion()
+####################################################
+##               Grand  Menage                     #
+####################################################
 
-            return
-        self.initialisaion()
-        self.INTERFACE.ids.errorLogin.text = "Le mot de passe est incorrect !"
-
-
-    def initialisaion(self):
-        self.INTERFACE.ids.loader.active = False
-        self.INTERFACE.ids.password.text = ""
-        self.INTERFACE.ids.button_login.icon = "arrow-right"
-        self.INTERFACE.ids.button_login.text = "S'identifier"
-    
-
-    dialog = None
     def show_alert_dialog(self):
+        self.dialog = None
         if not self.dialog:
             self.dialog = MDDialog(
                 title="Réinitialisation ?",
@@ -214,21 +228,51 @@ class GFS(MDApp):
         self.dialog.open()
     
     
-    def show_edit_dialog(self):
+    def show_edit_dialog(self,num):
+        self.num = num
+
+        self.dialog = None
         if not self.dialog:
+            cls = BoxLayout(
+                orientation= "vertical",
+                spacing= "12dp",
+                size_hint_y= None,
+                height= "120dp"
+            )
+            cls.add_widget(
+                MDLabel(
+                    text = self.INTERFACE.ids[f'raisedBtn{self.num+1}'].text,
+                    font_name = 'fonts/PS.ttf'
+                )
+            )
+
+            self.personne = MDTextField(
+                text = self.INTERFACE.ids[f'raisedBtn{self.num}'].text,
+                font_name = 'fonts/PS.ttf'
+            )
+
             self.dialog = MDDialog(
-                title="Editer",
+                title="Grand Menage:",
                 type="custom",
-                content_cls=Content(),
+                content_cls = cls,
                 buttons=[
                     MDFlatButton(
-                        text="ANNULER", text_color=self.theme_cls.primary_color
+                        text="ANNULER", text_color=self.theme_cls.primary_color, on_press=self.close_edit_Dialog
                     ),
                     MDFlatButton(
-                        text="VALIDER", text_color=self.theme_cls.primary_color
+                        text="OK", text_color=self.theme_cls.primary_color, on_press=self.close_edit_Dialog
                     ),
                 ],
             )
+            cls.add_widget(self.personne)
+
         self.dialog.open()
+
+    def close_edit_Dialog(self,btn):
+        if btn.text == "ANNULER":
+            self.dialog.dismiss()
+        if btn.text == "OK":
+            self.INTERFACE.ids[f'raisedBtn{self.num}'].text = self.personne.text
+            self.dialog.dismiss()
 
 GFS().run()
