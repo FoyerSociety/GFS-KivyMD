@@ -1172,6 +1172,119 @@ ScreenManager:
                                     font_name: 'fonts/PS.ttf'
                                     font_style: 'H3'
                                     bold: True
+                                MDFillRoundFlatIconButton:
+                                    text: "Cotisations"
+                                    font_size: '16sp'
+                                    pos_hint: {"center_x":0.40, "center_y":0.59}
+                                    size_hint: 0.18, 0.06
+                                    elevation: 11
+                                    icon: "currency-eur"
+                                    on_release : Tab_argent.current = 'Cotisation'
+                                MDFillRoundFlatIconButton:
+                                    text: "Historiques"
+                                    font_size: '16sp'
+                                    pos_hint: {"center_x":0.68, "center_y":0.59}
+                                    size_hint: 0.18, 0.06
+                                    elevation: 11
+                                    icon: "chart-bar"
+                                    on_release : Tab_argent.current = 'Historique'
+                                ScreenManager:
+                                    id : Tab_argent
+                                    Screen:
+                                        name: "Cotisation"
+                                        MDLabel:
+                                            text: "Ces cotisations concerne ce mois en cours, il faut payer avant le 20 de ce mois"
+                                            pos_hint : {"center_x":0.786, "center_y":0.52}
+                                            font_size: "14sp"
+                                            font_style: "Subtitle2"
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "180dp", "220dp"
+                                            pos_hint: {"center_x": 0.30, "center_y": 0.31}
+                                            MDFloatingActionButton:
+                                                icon: "check-bold"
+                                                user_font_size: "14sp"
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#ffffff")
+                                                md_bg_color: get_color_from_hex("#04bf4c")
+                                                elevation_normal: 0
+                                            MDLabel:
+                                                text: "Bazar"
+                                                pos_hint: {"x":0.36, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDRoundFlatIconButton:
+                                                icon: "currency-eur"
+                                                text: "15000 Ar"
+                                                pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '17sp'
+                                                margin: "30dp"
+                                            MDIconButton:
+                                                icon: "trash-can"
+                                                theme_text_color: "Custom"
+                                                font_size: "18sp"
+                                                text_color: get_color_from_hex("#071f38")
+                                                pos_hint: {"center_x":0.5, "center_y":0.3}
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "180dp", "220dp"
+                                            pos_hint: {"center_x": 0.54, "center_y": 0.31}
+                                            MDFloatingActionButton:
+                                                icon: "alert"
+                                                user_font_size: "14sp"
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#ffffff")
+                                                md_bg_color: get_color_from_hex("#faaf00")
+                                                elevation_normal: 0
+                                            MDLabel:
+                                                text: "Tee-shirt"
+                                                pos_hint: {"x":0.30, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDRoundFlatIconButton:
+                                                icon: "currency-eur"
+                                                text: "15000 Ar"
+                                                pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '17sp'
+                                                margin: "30dp"
+                                            MDIconButton:
+                                                icon: "trash-can"
+                                                theme_text_color: "Custom"
+                                                font_size: "18sp"
+                                                text_color: get_color_from_hex("#071f38")
+                                                pos_hint: {"center_x":0.5, "center_y":0.3}       
+                                        
+                                        MDSeparator:
+                                            height: "4dp"    
+                                            pos_hint: {"center_x":0.5, "center_y":0.11}      
+                                        MDLabel:
+                                            text: "Cette section est réservée à l'admin spécifié"
+                                            pos_hint : {"center_x":0.68, "center_y":0.05}
+                                            font_size: "14sp"
+                                            font_style: "Subtitle2"
+                                        MDFillRoundFlatIconButton:
+                                            text: "Ajouter une cotisation"
+                                            font_size: '16sp'
+                                            pos_hint: {"center_x":0.59, "center_y":0.05}
+                                            size_hint: 0.22, 0.06
+                                            elevation: 11
+                                            icon: "card-plus-outline"
+                                        MDFillRoundFlatIconButton:
+                                            text: "Payer"
+                                            font_size: '16sp'
+                                            pos_hint: {"center_x":0.77, "center_y":0.05}
+                                            size_hint: 0.12, 0.06
+                                            elevation: 11
+                                            icon: "cash-plus"                        
+                                    Screen:
+                                        name: "Historique"
+                                        
                                 
 
                             Screen:
