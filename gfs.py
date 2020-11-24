@@ -139,13 +139,13 @@ class GFS(MDApp):
             ],
             row_data=[
                 (
-                    "Corgety frite",
-                    "Petsay @ atody",
-                    "Akoho sy potikena",
-                    "Kitoza rony",
-                    "Chou sy ravitot",
-                    "Tsaramaso manga",
-                    "Légumes atono",
+                    "Corgety",
+                    "Petsay",
+                    "Akoho sauce",
+                    "Kitoza",
+                    "Chou",
+                    "Tsaramaso sauce",
+                    "Légumes sauté",
                 ),
                 (
                     "4 500 Ar",
