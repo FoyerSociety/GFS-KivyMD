@@ -65,6 +65,7 @@ class GFS(MDApp):
         self.dialog = None
         self.db = None
         self.__tableau()
+        self.__tableau_status()
 
         ###For the MDRaisedButton in Grand-menage
         for i in range(10): self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
@@ -202,8 +203,60 @@ class GFS(MDApp):
                 )
             ],
         )
-        
         self.INTERFACE.ids.tableau_repas.add_widget(tab)
+
+
+####################################################
+##           Tableau de status de cotisation       #
+####################################################
+
+    def __tableau_status(self):
+        tab = MDDataTable(
+            size_hint=(0.815, 0.45),
+            column_data=[
+                ("Membres", dp(50)),
+                ("Cotisations", dp(50)),
+                ("Status", dp(50)),
+            ],
+            row_data=[
+                # The number of elements must match the length
+                # of the `column_data` list.
+                (
+                    "Landry",
+                    "Bazar",
+                    ("alert", [255 / 256, 165 / 256, 0, 1], "En attente"),
+                ),
+                (
+                    "Gaetan",
+                    "Tee-shirt",
+                    ("alert", [255 / 256, 165 / 256, 0, 1], "En attente"),
+                ),
+                (
+                    "Haja",
+                    "Tee-shirt",
+                    (
+                        "checkbox-marked-circle",
+                        [39 / 256, 174 / 256, 96 / 256, 1],
+                        "Payé",
+                    ),
+                ),
+                (
+                    "Fabien",
+                    "Bazar",
+                    ("alert", [255 / 256, 165 / 256, 0, 1], "En attente"),
+                ),
+                (
+                    "Casmir",
+                    "Tee-shirt",
+                    (
+                        "checkbox-marked-circle",
+                        [39 / 256, 174 / 256, 96 / 256, 1],
+                        "Payé",
+                    ),
+                ),
+            ],
+        )
+        self.INTERFACE.ids.tableau_status_cotisation.add_widget(tab)
 
 
 ####################################################

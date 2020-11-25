@@ -1303,6 +1303,23 @@ ScreenManager:
                                             icon: "cash-plus"                        
                                     Screen:
                                         name: "Historique"
+                                        MDLabel:
+                                            text: "Ci-dessous sont les status de payement des cotisations de ce mois en cours"
+                                            pos_hint : {"center_x":0.795, "center_y":0.54}
+                                            font_size: "14sp"
+                                            font_style: "Subtitle2"
+                                        AnchorLayout:
+                                            pos_hint: {"center_x":0.50, "center_y":0.27}
+                                            anchor_x: 'center'
+                                            id: tableau_status_cotisation
+                                        MDFloatingActionButton:
+                                            icon: "chevron-right"
+                                            user_font_size: "20sp"
+                                            theme_text_color: "Custom"
+                                            pos_hint: {"center_x":0.95, "center_y":0.27}
+                                            text_color: get_color_from_hex("#ffffff")
+                                            md_bg_color: get_color_from_hex("#071f38")
+                                            elevation_normal: 0
                                         
                                 
 
