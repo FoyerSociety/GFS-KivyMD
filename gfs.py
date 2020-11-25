@@ -66,6 +66,7 @@ class GFS(MDApp):
         self.db = None
         self.__tableau()
         self.__tableau_status()
+        self.__tableau_transaction()
 
         ###For the MDRaisedButton in Grand-menage
         for i in range(10): self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
@@ -257,6 +258,63 @@ class GFS(MDApp):
             ],
         )
         self.INTERFACE.ids.tableau_status_cotisation.add_widget(tab)
+
+
+####################################################
+##           Tableau de transaction                #
+####################################################
+
+    def __tableau_transaction(self):
+        tab = MDDataTable(
+            size_hint=(0.813, 0.45),
+            column_data=[
+                ("Dates de transaction", dp(35)),
+                ("Dates d'insertion", dp(30)),
+                ("Membres", dp(25)),
+                ("Montants", dp(25)),
+                ("Raisons", dp(40)),
+            ],
+            row_data=[
+                # The number of elements must match the length
+                # of the `column_data` list.
+                (
+                    "10-10-20",
+                    "10-10-20",
+                    "Landry",
+                    "10000 Ar",
+                    "Cotisation Bazar",
+                ),
+                (
+                    "10-10-20",
+                    "10-10-20",
+                    "Landry",
+                    "10000 Ar",
+                    "Cotisation Bazar",
+                ),
+                (
+                    "10-10-20",
+                    "10-10-20",
+                    "Landry",
+                    "10000 Ar",
+                    "Cotisation Bazar",
+                ),
+                (
+                   "10-10-20",
+                    "10-10-20",
+                    "Landry",
+                    "10000 Ar",
+                    "Cotisation Bazar",
+                ),
+                (
+                    "10-10-20",
+                    "10-10-20",
+                    "Landry",
+                    "10000 Ar",
+                    "Cotisation Bazar",
+                ),
+            ],
+        )
+        self.INTERFACE.ids.tableau_transaction.add_widget(tab)
 
 
 ####################################################
