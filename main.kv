@@ -4,21 +4,6 @@
 #: import FadeTransition kivy.uix.screenmanager.FadeTransition
 #: import translate __utils.translate
 
-
-# <Content>
-#     id: content_id
-#     orientation: "vertical"
-#     spacing: "12dp"
-#     size_hint_y: None
-#     height: "120dp"
-
-#     MDTextField:
-#         id : tache
-#         hint_text: "Tâche"
-#     MDTextField:
-#         id : binome
-#         hint_text: "Binôme"
-
 ScreenManager:
     id: managescreen
     transition : SlideTransition(duration=.50)
@@ -28,15 +13,15 @@ ScreenManager:
 
         Screen:
             Image:
-                source: "images/back10.jpg"
+                source: "images/bg_login.jpg"
                 pos_hint: {"center_x":0.2, "center_y":0.5}
-                elevation: 12
+                elevation: 1
 
             Image:
                 source: "images/logo1.png"
-                pos_hint: {"center_x":0.25, "center_y":0.53}
-                size_hint_x: "0.5"
-                size_hint_y: "0.8"
+                pos_hint: {"center_x":0.25, "center_y":0.5}
+                size_hint_x: "0.4"
+                size_hint_y: "0.4"
                 elevation: 12
 
             Image:
@@ -46,38 +31,10 @@ ScreenManager:
                 size_hint_y: "0.3"
                 elevation: 12
 
-            MDLabel:
-                text: translate('errormdp')
-                theme_text_color: "Custom"
-                text_color: 0.3, 0.3, 0.3, 1
-                font_name: 'fonts/PS.ttf'
-                font_size: '13sp'
-                bold: True
-                pos_hint: {"center_x":1.08, "center_y":0.22}
-            
-            MDLabel:
-                id: errorLogin
-                text: ""
-                theme_text_color: "Custom"
-                text_color: get_color_from_hex("#fc0345")
-                font_name: 'fonts/PS.ttf'
-                font_size: '16sp'
-                bold: True
-                pos_hint: {"center_x":1.14, "center_y":0.17}
-
-            MDLabel:
-                text: "F-Society Copyright 2020"
-                theme_text_color: "Custom"
-                text_color: 0.3, 0.3, 0.3, 1
-                font_name: 'fonts/PS.ttf'
-                font_size: '12sp'
-                bold: False
-                pos_hint: {"center_x":1.18, "center_y":0.05}
-
             MDTextField:
                 id : username
                 hint_text: translate('Username')
-                pos_hint: {"center_x":0.76, "center_y":0.6}
+                pos_hint: {"center_x":0.76, "center_y":0.55}
                 size_hint: 0.35, 0.11
                 icon_right: "account"
                 icon_right_color: 0.8, 0.8, 0.8, 1
@@ -87,19 +44,18 @@ ScreenManager:
                 id : password
                 hint_text: translate('Password')
                 password: True
-                pos_hint: {"center_x":0.76, "center_y":0.45}
+                pos_hint: {"center_x":0.76, "center_y":0.40}
                 size_hint: 0.35, 0.11
                 icon_right: "lock"
                 icon_right_color: 0.8, 0.8, 0.8, 1
                 font_name: 'fonts/PS.ttf'
 
             MDFillRoundFlatIconButton:
-                # on_release : app.root.current = 'Main'
                 on_release : app.loadConnection()
                 text: translate('Se_connecter')
                 font_size: '16sp'
                 bold: True  
-                pos_hint: {"center_x":0.75, "center_y":0.29}
+                pos_hint: {"center_x":0.75, "center_y":0.25}
                 size_hint: 0.15, 0.06
                 elevation: 11
                 icon: "arrow-right"
@@ -110,8 +66,36 @@ ScreenManager:
                 color: 1,1,1,1
                 size_hint: None, None
                 size: dp(20), dp(20)
-                pos_hint: {'center_x':0.75, 'center_y':0.29}
+                pos_hint: {'center_x':0.75, 'center_y':0.25}
                 active: False
+
+            MDLabel:
+                text: translate('errormdp')
+                theme_text_color: "Custom"
+                text_color: 0.3, 0.3, 0.3, 1
+                font_name: 'fonts/PS.ttf'
+                font_size: '13sp'
+                bold: True
+                pos_hint: {"center_x":1.08, "center_y":0.19}
+
+            MDLabel:
+                id: errorLogin
+                text: ""
+                theme_text_color: "Custom"
+                text_color: get_color_from_hex("#fc0345")
+                font_name: 'fonts/PS.ttf'
+                font_size: '16sp'
+                bold: True
+                pos_hint: {"center_x":1.14, "center_y":0.15}
+
+            MDLabel:
+                text: "F-Society Copyright 2020"
+                theme_text_color: "Custom"
+                text_color: 0.3, 0.3, 0.3, 1
+                font_name: 'fonts/PS.ttf'
+                font_size: '12sp'
+                bold: False
+                pos_hint: {"center_x":1.18, "center_y":0.05}
             
     Screen:
         id : Main
@@ -191,12 +175,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                        
+                                                        Image:
+                                                            source: "images/food2.png"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
                                                         text: "Dinahasina"
@@ -223,12 +208,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                                                                               
+                                                        Image:
+                                                            source: "images/food2.png"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
                                                         text: "Sarino"
@@ -255,12 +241,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                                                                               
+                                                        Image:
+                                                            source: "images/food2.png"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
                                                         text: "Aina"
@@ -290,12 +277,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                                                                               
+                                                        Image:
+                                                            source: "images/food2.png"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
                                                         text: "Landry"
@@ -322,12 +310,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                                                                                
+                                                        Image:
+                                                            source: "images/food2.png"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
                                                         text: "Fabien"
@@ -354,12 +343,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/food2.png"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                                                   
+                                                        Image:
+                                                            source: "images/food2.png"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
                                                         text: "Arleme"
@@ -474,12 +464,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                       
+                                                        Image:
+                                                            source: "images/broom1.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Arleme"
@@ -506,12 +497,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                        
+                                                        Image:
+                                                            source: "images/broom1.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Dinahasina"
@@ -538,12 +530,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                       
+                                                        Image:
+                                                            source: "images/broom1.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Sarino"
@@ -572,12 +565,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                 
+                                                        Image:
+                                                            source: "images/broom1.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Aina"
@@ -604,12 +598,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                       
+                                                        Image:
+                                                            source: "images/broom1.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Landry"
@@ -636,12 +631,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:                                                       
+                                                        Image:
+                                                            source: "images/broom1.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Gaetan"
@@ -686,12 +682,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:
+                                                        Image:
+                                                            source: "images/broom.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Haja"
@@ -718,12 +715,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:
+                                                        Image:
+                                                            source: "images/broom.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Landry"
@@ -750,12 +748,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:
+                                                        Image:
+                                                            source: "images/broom.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Casimir"
@@ -784,12 +783,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:
+                                                        Image:
+                                                            source: "images/broom.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Fabien"
@@ -816,12 +816,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:
+                                                        Image:
+                                                            source: "images/broom.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Landry"
@@ -848,12 +849,13 @@ ScreenManager:
                                                         height: self.texture_size[1]
                                                     MDSeparator:
                                                         height: "2dp"
-                                                    Image:
-                                                        source: "images/broom1.jpg"
-                                                        pos_hint: {"center_x":0.5, "center_y":0.75}
-                                                        size_hint_x: "1"
-                                                        size_hint_y: "0.8"
-                                                        elevation: 12   
+                                                    MDBoxLayout:
+                                                        Image:
+                                                            source: "images/broom.jpg"
+                                                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                            size_hint_x: "1"
+                                                            size_hint_y: "0.8"
+                                                            elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
                                                         text: "Aina"
@@ -888,7 +890,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#f04d4d")
                                             elevation_normal: 0
-                                            on_release : app.show_alert_dialog()
+                                            on_release : app.show_init_dialog(2)
                                         MDFloatingActionButton:
                                             id : edit1
                                             icon: "pencil"
@@ -925,7 +927,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#f04d4d")
                                             elevation_normal: 0
-                                            on_release : app.show_alert_dialog()
+                                            on_release : app.show_init_dialog(4)
                                         MDFloatingActionButton:
                                             id : edit2
                                             icon: "pencil"
@@ -961,7 +963,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#f04d4d")
                                             elevation_normal: 0
-                                            on_release : app.show_alert_dialog()
+                                            on_release : app.show_init_dialog(6)
                                         MDFloatingActionButton:
                                             id : edit3
                                             icon: "pencil"
@@ -979,7 +981,7 @@ ScreenManager:
                                             size_hint_y: "0.23"
                                         MDRaisedButton:
                                             id : raisedBtn7
-                                            text: "INSTENSILS"
+                                            text: "USTENSILS"
                                             pos_hint: {"center_x":0.72, "center_y":0.47}
                                             font_size: '15sp'
                                             size_hint: 0.17, 0.06
@@ -997,7 +999,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#f04d4d")
                                             elevation_normal: 0
-                                            on_release : app.show_alert_dialog()
+                                            on_release : app.show_init_dialog(8)
                                         MDFloatingActionButton:
                                             id : edit4
                                             icon: "pencil"
@@ -1009,7 +1011,7 @@ ScreenManager:
                                             elevation_normal: 0
                                             on_release: app.show_edit_dialog(8)
                                         Image:
-                                            source: "images/vitre2.jpg"
+                                            source: "images/ustencils.jpg"
                                             pos_hint: {"center_x":0.72, "center_y":0.33}
                                             size_hint_x: "0.23"
                                             size_hint_y: "0.23"
@@ -1033,7 +1035,7 @@ ScreenManager:
                                             text_color: get_color_from_hex("#ffffff")
                                             md_bg_color: get_color_from_hex("#f04d4d")
                                             elevation_normal: 0
-                                            on_release : app.show_alert_dialog()
+                                            on_release : app.show_init_dialog(10)
                                         MDFloatingActionButton:
                                             id : edit5
                                             icon: "pencil"
@@ -1210,6 +1212,7 @@ ScreenManager:
                                 ScreenManager:
                                     id : Tab_argent
                                     Screen:
+                                        id : Cotisation
                                         name: "Cotisation"
                                         MDLabel:
                                             text: "Ces cotisations concerne ce mois en cours, il faut payer avant le 20 de ce mois"
@@ -1252,7 +1255,7 @@ ScreenManager:
                                             padding: "15dp"
                                             size_hint: None, None
                                             size: "180dp", "220dp"
-                                            pos_hint: {"center_x": 0.54, "center_y": 0.31}
+                                            pos_hint: {"center_x": 0.55, "center_y": 0.31}
                                             MDFloatingActionButton:
                                                 icon: "alert"
                                                 user_font_size: "14sp"
@@ -1293,6 +1296,7 @@ ScreenManager:
                                             size_hint: 0.22, 0.06
                                             elevation: 11
                                             icon: "card-plus-outline"
+                                            on_press: app.add_cotis_dialog()
                                         MDFillRoundFlatIconButton:
                                             text: "Payer"
                                             font_size: '16sp'

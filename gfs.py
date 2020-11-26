@@ -29,8 +29,9 @@ from kivy.clock import Clock
 from kivy.metrics import dp
 from kivymd.app import MDApp
 from kivymd.uix.label import MDLabel
+from kivymd.uix.card import MDCard
 from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDFlatButton
+from kivymd.uix.button import MDFlatButton, MDFloatingActionButton, MDRoundFlatIconButton,MDIconButton
 from kivymd.uix.menu import MDDropdownMenu
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.boxlayout import MDBoxLayout
@@ -321,28 +322,38 @@ class GFS(MDApp):
 ##               Grand  Menage                     #
 ####################################################
 
-    def show_alert_dialog(self):
+###Reinitialiser les tâches
+    def show_init_dialog(self,num):
+        self.num = num
         self.dialog = None
+
         if not self.dialog:
             self.dialog = MDDialog(
                 title="Réinitialisation ?",
                 text="Voulez-vous vraiment réinitialiser cette tâche ?",
                 buttons=[
                     MDFlatButton(
-                        text="VALIDER", text_color=self.theme_cls.primary_color
+                        text="ANNULER", text_color=self.theme_cls.primary_color, on_press=self.close_init_Dialog
                     ),
                     MDFlatButton(
-                        text="ANNULER", text_color=self.theme_cls.primary_color
+                        text="VALIDER", text_color=self.theme_cls.primary_color, on_press=self.close_init_Dialog
                     ),
                 ],
             )
         self.dialog.open()
     
-    
+    def close_init_Dialog(self,btn):
+        if btn.text == "ANNULER":
+            self.dialog.dismiss()
+        if btn.text == "VALIDER":
+            self.INTERFACE.ids[f'raisedBtn{self.num}'].text = ""
+            self.dialog.dismiss()
+
+###Modifier les tâches
     def show_edit_dialog(self,num):
         self.num = num
-
         self.dialog = None
+
         if not self.dialog:
             cls = BoxLayout(
                 orientation= "vertical",
@@ -352,14 +363,13 @@ class GFS(MDApp):
             )
             cls.add_widget(
                 MDLabel(
-                    text = self.INTERFACE.ids[f'raisedBtn{self.num+1}'].text,
-                    font_name = 'fonts/PS.ttf'
+                    text = self.INTERFACE.ids[f'raisedBtn{self.num-1}'].text
                 )
             )
 
             self.personne = MDTextField(
                 text = self.INTERFACE.ids[f'raisedBtn{self.num}'].text,
-                font_name = 'fonts/PS.ttf'
+                
             )
 
             self.dialog = MDDialog(
@@ -379,11 +389,119 @@ class GFS(MDApp):
 
         self.dialog.open()
 
+
     def close_edit_Dialog(self,btn):
         if btn.text == "ANNULER":
             self.dialog.dismiss()
         if btn.text == "OK":
             self.INTERFACE.ids[f'raisedBtn{self.num}'].text = self.personne.text
             self.dialog.dismiss()
+
+####################################################
+##               Cotisation                        #
+####################################################
+    def add_cotis_dialog(self):
+        self.dialog = None
+
+        if not self.dialog:
+            cls = BoxLayout(
+                orientation= "vertical",
+                spacing= "12dp",
+                size_hint_y= None,
+                height= "210dp"
+            )
+
+            ###Reason of the cotisation
+            cls.add_widget(
+                MDLabel(
+                    text = "Motifs"
+                )
+            )
+            self.motifs_cotis = MDTextField()
+            cls.add_widget(self.motifs_cotis)
+
+            ###Amount of the cotisation
+            cls.add_widget(
+                MDLabel(
+                    text = "Montant"
+                )
+            )
+            self.argent_cotis = MDTextField()
+            cls.add_widget(self.argent_cotis)
+
+            ###The date of the transaction
+            cls.add_widget(
+                MDLabel(
+                    text = "Date"
+                )
+            )
+            self.date_cotis = MDTextField()
+            cls.add_widget(self.date_cotis)
+
+            self.dialog = MDDialog(
+                title="Grand Menage:",
+                type="custom",
+                content_cls = cls,
+                buttons=[
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color, on_press=self.close_cotis_Dialog
+                    ),
+                    MDFlatButton(
+                        text="OK", text_color=self.theme_cls.primary_color, on_press=self.close_cotis_Dialog
+                    ),
+                ],
+            )
+
+        self.dialog.open()
+
+    def close_cotis_Dialog(self,btn):
+        if btn.text == "ANNULER":
+            self.dialog.dismiss()
+        if btn.text == "OK":
+            new_card = MDCard(
+                orientation = "vertical",
+                padding = "15dp",
+                size_hint = (None, None),
+                size = ("180dp", "220dp"),
+                pos_hint = {"center_x": 0.80, "center_y": 0.31}
+            )
+
+            new_card.add_widget(
+                MDFloatingActionButton(
+                    icon = "alert",
+                    user_font_size = "14sp",
+                    theme_text_color = "Custom",
+                    text_color = get_color_from_hex("#ffffff"),
+                    md_bg_color = get_color_from_hex("#faaf00"),
+                    elevation_normal = 0
+                )
+            )
+            new_card.add_widget(
+                MDLabel(
+                    text = self.motifs_cotis.text,
+                    pos_hint = {"x":0.30, "y":0.75},
+                    font_size = '18sp'
+                )
+            )
+            new_card.add_widget(
+                MDRoundFlatIconButton(
+                    icon = "currency-eur",
+                    text = self.argent_cotis.text,
+                    pos_hint = {"center_x":0.5, "center_y":0.5},
+                    font_size = '17sp',
+                    margin = "30dp"
+                )
+            )
+            new_card.add_widget(
+                MDIconButton(
+                    icon=  "trash-can",
+                    theme_text_color = "Custom",
+                    font_size = "18sp",
+                    text_color = get_color_from_hex("#071f38"),
+                    pos_hint= {"center_x":0.5, "center_y":0.3}
+                )
+            )
+            self.INTERFACE.ids.Cotisation.add_widget(new_card)
+        self.dialog.dismiss()
 
 GFS().run()
