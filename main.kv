@@ -1375,6 +1375,133 @@ ScreenManager:
                                     font_name: 'fonts/PS.ttf'
                                     font_style: 'H3'
                                     bold: True
+                                MDFillRoundFlatIconButton:
+                                    text: "Factures"
+                                    font_size: '16sp'
+                                    pos_hint: {"center_x":0.40, "center_y":0.59}
+                                    size_hint: 0.18, 0.06
+                                    elevation: 11
+                                    icon: "card-text"
+                                    on_release : Tab_jirama.current = 'facture'
+                                MDFillRoundFlatIconButton:
+                                    text: "Status"
+                                    font_size: '16sp'
+                                    pos_hint: {"center_x":0.68, "center_y":0.59}
+                                    size_hint: 0.18, 0.06
+                                    elevation: 11
+                                    icon: "list-status"
+                                    on_release : Tab_jirama.current = 'status'
+                                ScreenManager:
+                                    id : Tab_jirama
+                                    Screen:
+                                        name: "facture"
+                                        MDLabel:
+                                            text: "Ces factures concernent le ou les mois qui n'ont pas encore été payés"
+                                            pos_hint : {"center_x":0.815, "center_y":0.52}
+                                            font_size: "14sp"
+                                            font_style: "Subtitle2"
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "180dp", "220dp"
+                                            pos_hint: {"center_x": 0.30, "center_y": 0.31}
+                                            MDFloatingActionButton:
+                                                icon: "check-bold"
+                                                user_font_size: "14sp"
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#ffffff")
+                                                md_bg_color: get_color_from_hex("#04bf4c")
+                                                elevation_normal: 0
+                                            MDLabel:
+                                                text: "Septembre"
+                                                pos_hint: {"x":0.25, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDRoundFlatIconButton:
+                                                icon: "currency-eur"
+                                                text: "10000 Ar"
+                                                pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '15sp'
+                                                margin: "30dp"
+                                            MDIconButton:
+                                                icon: "trash-can"
+                                                theme_text_color: "Custom"
+                                                font_size: "18sp"
+                                                text_color: get_color_from_hex("#071f38")
+                                                pos_hint: {"center_x":0.5, "center_y":0.3}
+                                        MDCard:
+                                            orientation: "vertical"
+                                            padding: "15dp"
+                                            size_hint: None, None
+                                            size: "180dp", "220dp"
+                                            pos_hint: {"center_x": 0.55, "center_y": 0.31}
+                                            MDFloatingActionButton:
+                                                icon: "alert"
+                                                user_font_size: "14sp"
+                                                theme_text_color: "Custom"
+                                                text_color: get_color_from_hex("#ffffff")
+                                                md_bg_color: get_color_from_hex("#faaf00")
+                                                elevation_normal: 0
+                                            MDLabel:
+                                                text: "Novembre"
+                                                pos_hint: {"x":0.26, "y":0.75}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '18sp'
+                                            MDRoundFlatIconButton:
+                                                icon: "currency-eur"
+                                                text: "9000 Ar"
+                                                pos_hint: {"center_x":0.5, "center_y":0.5}
+                                                font_name: 'fonts/PS.ttf'
+                                                font_size: '15sp'
+                                            MDIconButton:
+                                                icon: "trash-can"
+                                                theme_text_color: "Custom"
+                                                font_size: "18sp"
+                                                text_color: get_color_from_hex("#071f38")
+                                                pos_hint: {"center_x":0.5, "center_y":0.3}       
+                                        
+                                        MDSeparator:
+                                            height: "4dp"    
+                                            pos_hint: {"center_x":0.5, "center_y":0.11}      
+                                        MDLabel:
+                                            text: "Cette section est réservée à l'admin spécifique:"
+                                            pos_hint : {"center_x":0.70, "center_y":0.05}
+                                            font_size: "14sp"
+                                            font_style: "Subtitle2"
+                                        MDFillRoundFlatIconButton:
+                                            text: "Ajouter une facture"
+                                            font_size: '16sp'
+                                            pos_hint: {"center_x":0.63, "center_y":0.05}
+                                            size_hint: 0.22, 0.06
+                                            elevation: 11
+                                            icon: "card-plus-outline"
+                                        MDFillRoundFlatIconButton:
+                                            text: "Payer"
+                                            font_size: '16sp'
+                                            pos_hint: {"center_x":0.81, "center_y":0.05}
+                                            size_hint: 0.12, 0.06
+                                            elevation: 11
+                                            icon: "cash-plus"                        
+                                    Screen:
+                                        name: "status"
+                                        MDLabel:
+                                            text: "Ci-dessous sont les status de payement des factures"
+                                            pos_hint : {"center_x":0.87, "center_y":0.54}
+                                            font_size: "14sp"
+                                            font_style: "Subtitle2"
+                                        AnchorLayout:
+                                            pos_hint: {"center_x":0.535, "center_y":0.27}
+                                            anchor_x: 'center'
+                                            id: tableau_status_facture
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                             Screen:
                                 name: "sc5"
                                 Image:

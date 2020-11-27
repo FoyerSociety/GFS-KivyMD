@@ -67,6 +67,7 @@ class GFS(MDApp):
         self.db = None
         self.__tableau()
         self.__tableau_status()
+        self.__tableau_status_facture()
         self.transact = []
         self.__tableau_transaction(self.transact)
 
@@ -260,6 +261,60 @@ class GFS(MDApp):
             ],
         )
         self.INTERFACE.ids.tableau_status_cotisation.add_widget(tab)
+
+
+
+####################################################
+##           Tableau de status de cotisation       #
+####################################################
+
+    def __tableau_status_facture(self):
+        tab = MDDataTable(
+            size_hint=(0.815, 0.45),
+            column_data=[
+                ("Membres", dp(50)),
+                ("Factures", dp(50)),
+                ("Status", dp(50)),
+            ],
+            row_data=[
+                # The number of elements must match the length
+                # of the `column_data` list.
+                (
+                    "Landry",
+                    "Septembre",
+                    ("alert", [255 / 256, 165 / 256, 0, 1], "En attente"),
+                ),
+                (
+                    "Gaetan",
+                    "Février",
+                    ("alert", [255 / 256, 165 / 256, 0, 1], "En attente"),
+                ),
+                (
+                    "Haja",
+                    "Novembre",
+                    (
+                        "checkbox-marked-circle",
+                        [39 / 256, 174 / 256, 96 / 256, 1],
+                        "Payé",
+                    ),
+                ),
+                (
+                    "Fabien",
+                    "Janvier",
+                    ("alert", [255 / 256, 165 / 256, 0, 1], "En attente"),
+                ),
+                (
+                    "Casmir",
+                    "Décembre",
+                    (
+                        "checkbox-marked-circle",
+                        [39 / 256, 174 / 256, 96 / 256, 1],
+                        "Payé",
+                    ),
+                ),
+            ],
+        )
+        self.INTERFACE.ids.tableau_status_facture.add_widget(tab)
 
 
 ####################################################
