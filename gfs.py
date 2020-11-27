@@ -1,6 +1,6 @@
 ########################################################
 # -*- coding: utf-8 -*-
-import sys, time
+import sys, time,datetime
 if '--prod' in sys.argv:
     PROD = True
     sys.argv.remove('--prod')
@@ -67,7 +67,8 @@ class GFS(MDApp):
         self.db = None
         self.__tableau()
         self.__tableau_status()
-        self.__tableau_transaction()
+        self.transact = []
+        self.__tableau_transaction(self.transact)
 
         ###For the MDRaisedButton in Grand-menage
         for i in range(10): self.INTERFACE.ids[f'raisedBtn{i+1}'].md_bg_color = get_color_from_hex("#2763e1")
@@ -265,8 +266,8 @@ class GFS(MDApp):
 ##           Tableau de transaction                #
 ####################################################
 
-    def __tableau_transaction(self):
-        tab = MDDataTable(
+    def __tableau_transaction(self,transact):
+        self.tab = MDDataTable(
             size_hint=(0.813, 0.45),
             column_data=[
                 ("Dates de transaction", dp(35)),
@@ -275,47 +276,10 @@ class GFS(MDApp):
                 ("Montants", dp(25)),
                 ("Raisons", dp(40)),
             ],
-            row_data=[
-                # The number of elements must match the length
-                # of the `column_data` list.
-                (
-                    "10-10-20",
-                    "10-10-20",
-                    "Landry",
-                    "10000 Ar",
-                    "Cotisation Bazar",
-                ),
-                (
-                    "10-10-20",
-                    "10-10-20",
-                    "Landry",
-                    "10000 Ar",
-                    "Cotisation Bazar",
-                ),
-                (
-                    "10-10-20",
-                    "10-10-20",
-                    "Landry",
-                    "10000 Ar",
-                    "Cotisation Bazar",
-                ),
-                (
-                   "10-10-20",
-                    "10-10-20",
-                    "Landry",
-                    "10000 Ar",
-                    "Cotisation Bazar",
-                ),
-                (
-                    "10-10-20",
-                    "10-10-20",
-                    "Landry",
-                    "10000 Ar",
-                    "Cotisation Bazar",
-                ),
-            ],
+            row_data=transact,
         )
-        self.INTERFACE.ids.tableau_transaction.add_widget(tab)
+        self.INTERFACE.ids.tableau_transaction.clear_widgets()
+        self.INTERFACE.ids.tableau_transaction.add_widget(self.tab)
 
 
 ####################################################
@@ -400,6 +364,8 @@ class GFS(MDApp):
 ####################################################
 ##               Cotisation                        #
 ####################################################
+
+###Add cotisation
     def add_cotis_dialog(self):
         self.dialog = None
 
@@ -439,7 +405,7 @@ class GFS(MDApp):
             cls.add_widget(self.date_cotis)
 
             self.dialog = MDDialog(
-                title="Grand Menage:",
+                title="Ajouter cotisation:",
                 type="custom",
                 content_cls = cls,
                 buttons=[
@@ -503,5 +469,85 @@ class GFS(MDApp):
             )
             self.INTERFACE.ids.Cotisation.add_widget(new_card)
         self.dialog.dismiss()
+
+###Payer cotisation
+    def paye_cotisation(self):
+        self.dialog = None
+
+        if not self.dialog:
+            cls = BoxLayout(
+                orientation= "vertical",
+                spacing= "12dp",
+                size_hint_y= None,
+                height= "300dp"
+            )
+
+            ###Reason of the payement
+            cls.add_widget(
+                MDLabel(
+                    text = "Motifs"
+                )
+            )
+            self.motifs_paye = MDTextField()
+            cls.add_widget(self.motifs_paye)
+
+            ###Who did the payement
+            cls.add_widget(
+                MDLabel(
+                    text = "Prenom"
+                )
+            )
+            self.who_paye = MDTextField()
+            cls.add_widget(self.who_paye)
+
+            ###Amount of the payement
+            cls.add_widget(
+                MDLabel(
+                    text = "Montant"
+                )
+            )
+            self.argent_paye = MDTextField()
+            cls.add_widget(self.argent_paye)
+
+            ###The date of the transaction
+            cls.add_widget(
+                MDLabel(
+                    text = "Date de payement"
+                )
+            )
+            self.date_paye = MDTextField()
+            cls.add_widget(self.date_paye)
+
+            self.dialog = MDDialog(
+                title="Payement de cotisation:",
+                type="custom",
+                content_cls = cls,
+                buttons=[
+                    MDFlatButton(
+                        text="ANNULER", text_color=self.theme_cls.primary_color, on_press=self.close_paye_Dialog
+                    ),
+                    MDFlatButton(
+                        text="OK", text_color=self.theme_cls.primary_color, on_press=self.close_paye_Dialog
+                    ),
+                ],
+            )
+
+        self.dialog.open()
+
+    def close_paye_Dialog(self,btn):
+        if btn.text == "ANNULER":
+            self.dialog.dismiss()
+        if btn.text == "OK":
+            self.transact.append((
+                self.date_paye.text,
+                datetime.date.today().strftime("%d-%m-%Y"),
+                self.who_paye.text,
+                self.argent_paye.text,
+                self.motifs_paye.text
+            ))
+
+            self.__tableau_transaction(self.transact)
+
+            self.dialog.dismiss()  
 
 GFS().run()
