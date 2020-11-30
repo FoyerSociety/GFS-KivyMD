@@ -32,7 +32,7 @@
  <tr>
 
   <td> Gaetan Jonathan :grin: </td>
-  <td> Landry Daniel :no_mouth: </td>
+  <td> Landry Daniel :sob: </td>
   <td> Arlème Johnson :sunglasses: </td>
    <td> Hajatiana Sitraka :scream: </td> 
   <td> 
