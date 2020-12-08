@@ -3,6 +3,8 @@
 #:import WipeTransition kivy.uix.screenmanager.WipeTransition
 #: import FadeTransition kivy.uix.screenmanager.FadeTransition
 #: import translate __utils.translate
+#: import date datetime
+#: import timedelta datetime
 
 ScreenManager:
     id: managescreen
@@ -184,12 +186,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
-                                                        text: "Dinahasina"
+                                                        text: app.tour_de_tache("hier","ck",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("hier",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -217,12 +219,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
-                                                        text: "Sarino"
+                                                        text: app.tour_de_tache("aujourdhui","ck",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("aujourdhui",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -250,12 +252,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
-                                                        text: "Aina"
+                                                        text: app.tour_de_tache("demain","ck",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
-                                                    MDLabel:
-                                                        text: "15-11-20"
+                                                    MDLabel: 
+                                                        text: app.jour_de_tache("demain",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
 
@@ -286,12 +288,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
-                                                        text: "Landry"
+                                                        text: app.tour_de_tache("hier","ck",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("hier",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -319,12 +321,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
-                                                        text: "Fabien"
+                                                        text: app.tour_de_tache("aujourdhui","ck",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("aujourdhui",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -352,12 +354,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "chef-hat"
-                                                        text: "Arleme"
+                                                        text: app.tour_de_tache("demain","ck",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "15-11-20"
+                                                        text: app.jour_de_tache("demain",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:

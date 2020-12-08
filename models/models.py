@@ -33,3 +33,37 @@ class Database:
 
         return True \
             if len(fetch) > 0 else False
+
+    def tour_tache(self,jour,tache):
+        if tache == "ck":
+            request = '''
+                SELECT username FROM User 
+                WHERE ind_uni_ck = 
+                    (SELECT DATEDIFF(%s,(SELECT ck FROM Date_begin)))
+                        %
+                    (SELECT COUNT(id) FROM User WHERE ind_uni_ck IS NOT NULL)
+                    ;
+            '''
+        elif tache == "mp":
+            request = '''
+                SELECT username FROM User 
+                WHERE ind_uni_ck = 
+                    (SELECT DATEDIFF(%s,(SELECT ck FROM Date_begin)))
+                        %
+                    (SELECT COUNT(id) FROM User WHERE ind_uni_mp IS NOT NULL)
+                    ;
+            '''
+        elif tache == "ma":
+            request = '''
+                SELECT username FROM User 
+                WHERE ind_uni_ck = 
+                    (SELECT DATEDIFF(%s,(SELECT ma FROM Date_begin)))
+                        %
+                    (SELECT COUNT(id) FROM User WHERE ind_uni_ma IS NOT NULL)
+                    ;
+            '''
+
+        self.cursor.execute(request,(jour,))
+        fetch = self.cursor.fetchone()
+
+        return fetch[0]

@@ -1,6 +1,7 @@
 ########################################################
 # -*- coding: utf-8 -*-
 import sys, time,datetime
+from datetime import timedelta
 if '--prod' in sys.argv:
     PROD = True
     sys.argv.remove('--prod')
@@ -39,6 +40,7 @@ from kivymd.icon_definitions import md_icons
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.dropdownitem import MDDropDownItem
+from kivymd.uix.picker import MDDatePicker
 from kivymd.uix.behaviors import RectangularElevationBehavior
 
 
@@ -50,8 +52,11 @@ class CustomToolbar(ThemableBehavior, RectangularElevationBehavior, MDBoxLayout)
 
 
 class GFS(MDApp):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+        if PROD:
+            self.db = Database(CONFIG)
         
         ###Load the kv file with the encoding utf8 [!important in winidows]
         with open('main.kv', encoding='utf-8') as f:
@@ -87,6 +92,13 @@ class GFS(MDApp):
         )
         self.menu.bind(on_release=self.logout)
 
+
+        self.date_dialog = MDDatePicker(
+            callback=self.get_date,
+            year=2010,
+            month=2,
+            day=12,
+        )
 
     ###Instance of the Database class
     def on_start(self):
@@ -142,7 +154,6 @@ class GFS(MDApp):
     def logout(self, menu, item):
         if item.text == "Déconnexion":
             _SESSION = None
-            _SESSION = None
             self.INTERFACE.current = "Login"
             self.menu.dismiss()
         if item.text == "Quit":
@@ -169,6 +180,39 @@ class GFS(MDApp):
             self.quit_dialog.dismiss()
         else:
             self.stop()
+####################################################
+##                    Tour de tâche                #
+####################################################
+    def tour_de_tache(self,jour,tache,slide):
+        date_tache = datetime.date.today()
+        if jour == "hier":
+            if slide == 1 : date_tache = datetime.date.today() - timedelta(1)
+            elif slide == 2 : date_tache = datetime.date.today() + timedelta(2)
+        elif jour == "aujourdhui":
+            if slide == 1 : date_tache = datetime.date.today()
+            elif slide == 2 : 
+                date_tache = datetime.date.today() + timedelta(3)
+        elif jour == "demain": 
+            if slide == 1 : date_tache = datetime.date.today() + timedelta(1)
+            elif slide == 2 : date_tache = datetime.date.today() + timedelta(4)
+
+        date_tache = date_tache.strftime("%Y-%m-%d")
+        return self.db.tour_tache(date_tache,tache)
+
+    def jour_de_tache(self,jour,slide):
+        date_tache = datetime.date.today()
+        if jour == "hier": 
+            if slide == 1 : date_tache = datetime.date.today() - timedelta(1)
+            elif slide == 2 : date_tache = datetime.date.today() + timedelta(2)
+        elif jour == "aujourdhui": 
+            if slide == 1 : date_tache = datetime.date.today()
+            elif slide == 2 : date_tache = datetime.date.today() + timedelta(3)
+        elif jour == "demain": 
+            if slide == 1 : date_tache = datetime.date.today() + timedelta(1)
+            elif slide == 2 : date_tache = datetime.date.today() + timedelta(4)
+
+        return date_tache.strftime("%d-%m-%y")
+
 
 ####################################################
 ##             Tableau in the cook menu            #
@@ -456,7 +500,7 @@ class GFS(MDApp):
                     text = "Date"
                 )
             )
-            self.date_cotis = MDTextField()
+            self.date_cotis = MDTextField(on_release= self.show_date_picker)
             cls.add_widget(self.date_cotis)
 
             self.dialog = MDDialog(
@@ -474,10 +518,10 @@ class GFS(MDApp):
             )
 
         self.dialog.open()
-
+        self.date_cotis.bind(
+            focus= lambda *args: self.show_date_picker()
+        )
     def close_cotis_Dialog(self,btn):
-        if btn.text == "ANNULER":
-            self.dialog.dismiss()
         if btn.text == "OK":
             new_card = MDCard(
                 orientation = "vertical",
@@ -590,8 +634,6 @@ class GFS(MDApp):
         self.dialog.open()
 
     def close_paye_Dialog(self,btn):
-        if btn.text == "ANNULER":
-            self.dialog.dismiss()
         if btn.text == "OK":
             self.transact.append((
                 self.date_paye.text,
@@ -603,6 +645,17 @@ class GFS(MDApp):
 
             self.__tableau_transaction(self.transact)
 
-            self.dialog.dismiss()  
+        self.dialog.dismiss()
+
+###Show DatePicker
+    def get_date(self, date):
+        '''
+        :type date: <class 'datetime.date'>
+
+        '''
+
+    def show_date_picker(self):
+        date_dialog = MDDatePicker(callback=self.get_date)
+        date_dialog.open()
 
 GFS().run()
