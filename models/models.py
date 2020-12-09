@@ -47,8 +47,8 @@ class Database:
         elif tache == "mp":
             request = '''
                 SELECT username FROM User 
-                WHERE ind_uni_ck = 
-                    (SELECT DATEDIFF(%s,(SELECT ck FROM Date_begin)))
+                WHERE ind_uni_mp = 
+                    (SELECT DATEDIFF(%s,(SELECT mp FROM Date_begin)))
                         %
                     (SELECT COUNT(id) FROM User WHERE ind_uni_mp IS NOT NULL)
                     ;
@@ -56,7 +56,7 @@ class Database:
         elif tache == "ma":
             request = '''
                 SELECT username FROM User 
-                WHERE ind_uni_ck = 
+                WHERE ind_uni_ma = 
                     (SELECT DATEDIFF(%s,(SELECT ma FROM Date_begin)))
                         %
                     (SELECT COUNT(id) FROM User WHERE ind_uni_ma IS NOT NULL)

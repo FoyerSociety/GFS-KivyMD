@@ -190,8 +190,7 @@ class GFS(MDApp):
             elif slide == 2 : date_tache = datetime.date.today() + timedelta(2)
         elif jour == "aujourdhui":
             if slide == 1 : date_tache = datetime.date.today()
-            elif slide == 2 : 
-                date_tache = datetime.date.today() + timedelta(3)
+            elif slide == 2 : date_tache = datetime.date.today() + timedelta(3)
         elif jour == "demain": 
             if slide == 1 : date_tache = datetime.date.today() + timedelta(1)
             elif slide == 2 : date_tache = datetime.date.today() + timedelta(4)

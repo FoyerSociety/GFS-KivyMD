@@ -1,10 +1,8 @@
-#:import get_color_from_hex kivy.utils.get_color_from_hex
-#:import SlideTransition kivy.uix.screenmanager.SlideTransition
-#:import WipeTransition kivy.uix.screenmanager.WipeTransition
+#: import get_color_from_hex kivy.utils.get_color_from_hex
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+#: import WipeTransition kivy.uix.screenmanager.WipeTransition
 #: import FadeTransition kivy.uix.screenmanager.FadeTransition
 #: import translate __utils.translate
-#: import date datetime
-#: import timedelta datetime
 
 ScreenManager:
     id: managescreen
@@ -475,12 +473,12 @@ ScreenManager:
                                                             elevation: 12
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Arleme"
+                                                        text: app.tour_de_tache("hier","mp",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("hier",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -508,12 +506,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Dinahasina"
+                                                        text: app.tour_de_tache("aujourdhui","mp",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("aujourdhui",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -541,12 +539,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Sarino"
+                                                        text: app.tour_de_tache("demain","mp",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "15-11-20"
+                                                        text: app.jour_de_tache("demain",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                             Screen:
@@ -576,12 +574,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Aina"
+                                                        text: app.tour_de_tache("hier","mp",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("hier",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -609,12 +607,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Landry"
+                                                        text: app.tour_de_tache("aujourdhui","mp",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("aujourdhui",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -642,12 +640,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Gaetan"
+                                                        text: app.tour_de_tache("demain","mp",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "15-11-20"
+                                                        text: app.jour_de_tache("demain",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:
@@ -693,12 +691,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Haja"
+                                                        text: app.tour_de_tache("hier","ma",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("hier",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -726,12 +724,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Landry"
+                                                        text: app.tour_de_tache("aujourdhui","ma",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("aujourdhui",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -759,12 +757,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Casimir"
+                                                        text: app.tour_de_tache("demain","ma",1)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "15-11-20"
+                                                        text: app.jour_de_tache("demain",1)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                             Screen:
@@ -794,12 +792,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Fabien"
+                                                        text: app.tour_de_tache("hier","ma",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("hier",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -827,12 +825,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Landry"
+                                                        text: app.tour_de_tache("aujourdhui","ma",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "14-11-20"
+                                                        text: app.jour_de_tache("aujourdhui",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                                 MDCard:
@@ -860,12 +858,12 @@ ScreenManager:
                                                             elevation: 12   
                                                     MDRoundFlatIconButton:
                                                         icon: "broom"
-                                                        text: "Aina"
+                                                        text: app.tour_de_tache("demain","ma",2)
                                                         pos_hint: {"center_x":0.5, "center_y":0.5}
                                                         font_name: 'fonts/PS.ttf'
                                                         font_size: '20sp'
                                                     MDLabel:
-                                                        text: "15-11-20"
+                                                        text: app.jour_de_tache("demain",2)
                                                         pos_hint: {"x":0.38, "y":0.75}
                                                         font_name: 'fonts/PS.ttf'
                                     Screen:
