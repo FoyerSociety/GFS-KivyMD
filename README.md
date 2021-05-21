@@ -2,7 +2,7 @@
   Desktop application using Python Kivy, Kivymd
 
   
-## Installation dependances
+## Installation des dependances
 
 `python3 -m pip install -r requirements`
 
@@ -34,8 +34,7 @@
   <td> Gaetan Jonathan :grin: </td>
   <td> Landry Daniel :sob: </td>
   <td> Arlème Johnson :sunglasses: </td>
-   <td> Hajatiana Sitraka :scream: </td> 
-  <td> 
+  <td> Hajatiana Sitraka :scream: </td> 
  </tr>
 </table>
 
