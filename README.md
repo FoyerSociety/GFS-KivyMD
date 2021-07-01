@@ -1,5 +1,5 @@
 # GFS
-  Desktop application using Python Kivy, Kivymd
+  Desktop application using Kivy and Kivymd
 
   
 ## Installation des dependances
